@@ -9,13 +9,13 @@
 #   Note:
 #   """
 #   This
-#   is 
-#   not a 
+#   is
+#   not a
 #   Multiple-line
 #   Comment
 #   """
 # -----------------------------------------------------------------------------
 
-print("Hello world")
+print("Hello World")
 
 # print("Comment me out!")    # This is an inline comment

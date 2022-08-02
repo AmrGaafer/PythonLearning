@@ -25,13 +25,13 @@ print(type(-655360.2222))
 print(type("Hi!"))
 
 # List:
-print(type([1,2,3]))
+print(type([1, 2, 3]))
 
 # Tuple:
-print(type((1,2,3)))
+print(type((1, 2, 3)))
 
 # Dictionary (dict):
-print(type({"Amr":"first" , "Sara":"second" , "Haitham":"third"}))
+print(type({"Amr": "first", "Sara": "second", "Haitham": "third"}))
 
 # Boolean (bool):
 print(type(2 == 2))
