@@ -24,6 +24,7 @@ print(myString2)
 
 # -------------------------------------------------------------------------------------------------------------
 # Strings Indexing and Slicing:
+# len(var): returns the length of the variable var
 # Indexing (Access Single Item):
 #   a. Use Square brackets '[]' to access an element
 #   b. Python uses zero based indexing
@@ -34,6 +35,12 @@ print(myString2)
 #   c. Not given End is interpreted as last character
 #   d. Not given Step is interpreted as 1
 # -------------------------------------------------------------------------------------------------------------
+
+print('len function:')
+a = 'I want to learn Python'
+b = '   I want to learn Python   '
+print(len(a))
+print(len(b))
 
 # Indexing
 print('Indexing:')
@@ -53,16 +60,10 @@ print(myString[:])      # prints the whole string
 
 # -------------------------------------------------------------------------------------------------------------
 # Strings Methods:
-# len(var): returns the length of the variable var
 # 1. strip(), rstrip(), lstrip()
 #   These methods accept an argument of the strings that could be removed,
 #   by default they remove the blank space
 # -------------------------------------------------------------------------------------------------------------
-print('len function:')
-a = 'I want to learn Python'
-b = '   I want to learn Python   '
-print(len(a))
-print(len(b))
 
 print('strip method:')
 a = '    I want to learn Python    '
