@@ -8,6 +8,7 @@
 #   b. skip single and double quotes within
 # -------------------------------------------------------------------------------------------------------------
 
+print('STRINGS:\n')
 msg = '"I" love'
 language = "'Python'"
 print(msg + ' ' + language)
@@ -36,6 +37,8 @@ print(myString2)
 #   d. Not given Step is interpreted as 1
 # -------------------------------------------------------------------------------------------------------------
 
+print('\n# ********************************************* #')
+print('STRINGS INDEXING AND SLICING:\n')
 print('len function:')
 a = 'I want to learn Python'
 b = '   I want to learn Python   '
@@ -49,6 +52,7 @@ print(myString[0])
 print(myString[1])
 print(myString[2])
 print(myString[-1])
+print('# --------------------------------------------- #')
 
 # Slicing
 print('Slicing:')
@@ -65,6 +69,8 @@ print(myString[:])      # prints the whole string
 #   by default they remove the blank space
 # -------------------------------------------------------------------------------------------------------------
 
+print('\n# ********************************************* #')
+print('STRING METHODS:\n')
 print('strip method:')
 a = '    I want to learn Python    '
 print(a.strip())
@@ -80,3 +86,10 @@ a = '$#qI want to learn Python$#q'
 print(a.strip('$#q'))
 print(a.lstrip('$#q'))
 print(a.rstrip('$#q'))
+
+# -------------------------------------------------------------------------------------------------------------
+# Strings Methods with boolean return:
+# -------------------------------------------------------------------------------------------------------------
+
+print('\n# ********************************************* #')
+print('STRING METHODS WITH BOOLEAN RETURN:\n')
