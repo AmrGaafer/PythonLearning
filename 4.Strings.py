@@ -50,3 +50,32 @@ print(myString[2:6])
 print(myString[7:])
 print(myString[::2])
 print(myString[:])      # prints the whole string
+
+# -------------------------------------------------------------------------------------------------------------
+# Strings Methods:
+# len(var): returns the length of the variable var
+# 1. strip(), rstrip(), lstrip()
+#   These methods accept an argument of the strings that could be removed,
+#   by default they remove the blank space
+# -------------------------------------------------------------------------------------------------------------
+print('len function:')
+a = 'I want to learn Python'
+b = '   I want to learn Python   '
+print(len(a))
+print(len(b))
+
+print('strip method:')
+a = '    I want to learn Python    '
+print(a.strip())
+print(a.lstrip())
+print(a.rstrip())
+
+a = '####I want to learn Python####'
+print(a.strip('#'))
+print(a.lstrip('#'))
+print(a.rstrip('#'))
+
+a = '$#qI want to learn Python$#q'
+print(a.strip('$#q'))
+print(a.lstrip('$#q'))
+print(a.rstrip('$#q'))
