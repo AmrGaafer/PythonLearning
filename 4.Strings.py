@@ -89,7 +89,71 @@ print(a.rstrip('$#q'))
 
 # -------------------------------------------------------------------------------------------------------------
 # Strings Methods with boolean return:
+# 1. istitle()          checks if string is a title
+# 2. isspace()          checks if string is a space
+# 3. islower()          checks if string is a lower case string
+# 4. isupper()          checks if string is an upper case string
+# 5. isidentifier()     checks if string is a valid identifier
+# 6. isalpha()          checks if string contains letters from a-z
+# 7. isalnum()          checks if string contains letters from a-z and numbers 0-9
 # -------------------------------------------------------------------------------------------------------------
 
 print('\n# ********************************************* #')
 print('STRING METHODS WITH BOOLEAN RETURN:\n')
+
+print('istitle method:')
+a = 'Amr Wael Ali Awad 3D'
+print(a.istitle())
+a = 'Amr Wael Ali Awad 3d'
+print(a.istitle())
+a = 'amr wael ali awad'
+print(a.istitle())
+print('# --------------------------------------------- #')
+
+print('istitle method:')
+a = '   '
+print(a.isspace())
+a = '*'
+print(a.isspace())
+print('# --------------------------------------------- #')
+
+print('islower method:')
+a = 'AMR WAEL ALI AWAD'
+print(a.islower())
+a = 'Amr Wael Ali Awad'
+print(a.islower())
+a = 'amr wael ali awad'
+print(a.islower())          # True
+print('# --------------------------------------------- #')
+
+print('isupper method:')
+a = 'AMR WAEL ALI AWAD'
+print(a.isupper())          # True
+a = 'Amr Wael Ali Awad'
+print(a.isupper())
+a = 'amr wael ali awad'
+print(a.isupper())
+print('# --------------------------------------------- #')
+
+print('isidentifier method:')
+a = 'ää'
+print(a.isidentifier())     # True
+a = '123a'
+print(a.isidentifier())
+print('# --------------------------------------------- #')
+
+print('isalpha method:')
+a = 'AMRWAELALIAWAD'
+print(a.isalpha())          # True
+a = 'Amr Wael Ali Awad'
+print(a.isalpha())
+print('# --------------------------------------------- #')
+
+print('isalnum method:')
+a = 'AMRWAELALIAWAD'
+print(a.isalnum())          # True
+a = 'AMRWAELALIAWAD3D'
+print(a.isalnum())          # True
+a = 'Amr Wael Ali Awad'
+print(a.isalnum())
+print('# --------------------------------------------- #')
