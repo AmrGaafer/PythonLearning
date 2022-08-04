@@ -8,6 +8,9 @@
 #   b. skip single and double quotes within
 # -------------------------------------------------------------------------------------------------------------
 
+from lib2to3.pgen2.token import AMPER
+
+
 print('\n# ********************************************* #')
 print('STRINGS:\n')
 msg = '"I" love'
@@ -176,3 +179,24 @@ print(a.isalnum())          # True
 a = 'Amr Wael Ali Awad'
 print(a.isalnum())
 print('# --------------------------------------------- #')
+
+# -------------------------------------------------------------------------------------------------------------
+# Strings Formating:
+# Old: Using the place holder %:
+#   %s:     string place holder
+#   %d:     digit place holder
+#   %f:     float place holder
+#   %.xs:   truncated string place holder with a certain length
+#   %.xf:   float place holder with a certainn decimal point accuracy
+#   Format: 'string with holder within' %(parameters corresponding of each holder)
+# -------------------------------------------------------------------------------------------------------------
+
+print('\n# ********************************************* #')
+print('STRING OLD FORMATTING:\n')
+name = 'Amr'
+namelong = 'Amr Wael Ali Awad'
+age = 34
+experience = 5.5
+print('My name is %s. I\'m %d years old. I have %.2f years of experience' %(name, age, experience))
+print('My name is %s. I\'m %d years old. I have %.2f years of experience' %(namelong, age, experience))
+print('My name is %.8s. I\'m %d years old. I have %.2f years of experience' %(namelong, age, experience))
