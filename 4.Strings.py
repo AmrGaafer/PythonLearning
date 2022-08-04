@@ -68,6 +68,11 @@ print(myString[:])      # prints the whole string
 # 1. strip(), rstrip(), lstrip()
 #   These methods accept an argument of the strings that could be removed,
 #   by default they remove the blank space
+#
+# 18. replace(old value, new value, count)
+#   replaces certain count of incidents (optional) 
+# 19. 'seperator'.join(Iterable)
+#   joins the elements of a list into one string
 # -------------------------------------------------------------------------------------------------------------
 
 print('\n# ********************************************* #')
@@ -87,6 +92,19 @@ a = '$#qI want to learn Python$#q'
 print(a.strip('$#q'))
 print(a.lstrip('$#q'))
 print(a.rstrip('$#q'))
+print('# --------------------------------------------- #')
+
+print('replace method:')
+a = 'My name is Amr. Amr comes from Egypt. Amr is 34 years old.'
+print(a.replace('Amr', 'Amoor'))
+print(a.replace('Amr', 'Amoor', 1))
+print(a.replace('Amr', 'Amoor', 2))
+print('# --------------------------------------------- #')
+
+print('join method:')
+a = ['Amr', 'Wael', 'Ali', 'Awad']
+print('-'.join(a))
+print('# --------------------------------------------- #')
 
 # -------------------------------------------------------------------------------------------------------------
 # Strings Methods with boolean return:
