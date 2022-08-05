@@ -8,10 +8,6 @@
 # 4. PascalCase
 # -----------------------------------------------------------------------------
 
-# Integer (int):
-from cgi import print_form
-
-
 print(type(10))
 print(type(655360))
 print(type(-655360))

@@ -8,9 +8,6 @@
 #   b. skip single and double quotes within
 # -------------------------------------------------------------------------------------------------------------
 
-from lib2to3.pgen2.token import AMPER
-
-
 print('\n# ********************************************* #')
 print('STRINGS:\n')
 msg = '"I" love'
@@ -182,13 +179,29 @@ print('# --------------------------------------------- #')
 
 # -------------------------------------------------------------------------------------------------------------
 # Strings Formating:
-# Old: Using the place holder %:
-#   %s:     string place holder
-#   %d:     digit place holder
-#   %f:     float place holder
-#   %.xs:   truncated string place holder with a certain length
-#   %.xf:   float place holder with a certainn decimal point accuracy
-#   Format: 'string with holder within' %(parameters corresponding of each holder)
+# Old Method: Using the place holder %:
+#   %s      string place holder
+#   %d      digit place holder
+#   %f      float place holder
+#   %.xs    truncated string place holder with a certain length
+#   %.xf    float place holder with a certainn decimal point accuracy
+#   Format: 'string with place holder(s) within' %(parameters corresponding of each holder)
+#-------------------------------------------------------------
+# New Method: Using the place holder {}:
+#   {}      general purpose square brackets place holder
+#   {:s}    string place holder
+#   {:d}    digit place holder
+#   {:f}    float place holder
+#   {:_d}   digit place holder with seperator within afer every three digits (format money)
+#   {:.xs}  truncated string place holder with a certain length
+#   {:.xf}  float place holder with a certainn decimal point accuracy
+#   Format: 'string with {}(s) within'.format(parameters corresponding of each holder)
+#   Advantage: It could be used in items rearrangement by giving the index to the place holder {index}
+#              The index precedes the column sign {index:formating}
+#   in Python 3.6 and later:
+#           using the format operator f
+#           f'string with {variable} within'
+# Resource: https://pyformat.info/
 # -------------------------------------------------------------------------------------------------------------
 
 print('\n# ********************************************* #')
@@ -197,6 +210,41 @@ name = 'Amr'
 namelong = 'Amr Wael Ali Awad'
 age = 34
 experience = 5.5
+print('My name is %s.' %(name))
+print('My name is %s.' %name)   # in case of one parameter, the paranthesis could be removed
 print('My name is %s. I\'m %d years old. I have %.2f years of experience' %(name, age, experience))
 print('My name is %s. I\'m %d years old. I have %.2f years of experience' %(namelong, age, experience))
 print('My name is %.8s. I\'m %d years old. I have %.2f years of experience' %(namelong, age, experience))
+print('# --------------------------------------------- #')
+
+print('STRING NEW FORMATTING:\n')
+print('My name is {}.'.format(name))
+print('My name is {}. I\'m {} years old. I have {} years of experience'.format(name, age, experience))
+print('My name is {}. I\'m {} years old. I have {} years of experience'.format(namelong, age, experience))
+print('My name is {:.8s}. I\'m {:d} years old. I have {:.2f} years of experience'.format(namelong, age, experience))
+
+print('# --------------------------------------------- #')
+
+print('money format:')
+money = 123456789
+print('I\'m rich and I\'ve {} $'.format(money))
+print('I\'m rich and I\'ve {:_d} $'.format(money))
+#print('I\'m rich and I\'ve {:.d} $'.format(money))
+print('I\'m rich and I\'ve {:,d} $'.format(money))
+
+print('# --------------------------------------------- #')
+
+print('items rearrange:')
+a, b, c = 'Amr', 'Sara', 'Haitham'
+print('The family members are: {}, {} and {}.'.format(a, b, c))
+print('The family members are: {2}, {1} and {0}.'.format(a, b, c))
+
+a, b, c =  1, 2, 3
+print('The family members are: {}, {} and {}.'.format(a, b, c))
+print('The family members are: {2}, {1} and {0}.'.format(a, b, c))
+print('The family members are: {2:d}, {1:f} and {0:.2f}.'.format(a, b, c))
+print('# --------------------------------------------- #')
+
+print('format using the f operator:')
+print('The family members are: {a}, {b} and {c}.')
+print(f'The family members are: {a}, {b} and {c}.')
