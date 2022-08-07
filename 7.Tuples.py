@@ -94,5 +94,5 @@ a, b, c, d = myNames
 print(a); print(b); print(c); print(d)
 
 myNames = ('Amr', 'Wael', 15, 'Ali', 'Awad')
-a, b, _, c, d = myNames
+a, b, _, c, d = myNames                 # ignore the 3rd element
 print(a); print(b); print(c); print(d)
