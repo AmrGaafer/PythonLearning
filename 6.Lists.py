@@ -1,7 +1,7 @@
 # -------------------------------------------------------------------------------------------------------------
 # Lists:
 # 1. list items are enclosed in square brackets
-# 2. list items are ordered with zero-inddex base'
+# 2. list items are ordered with zero-inddex base
 # 3. list items can be different data types
 # 4. list items are mutable (editable) -> edit, delete and add
 # -------------------------------------------------------------------------------------------------------------
@@ -80,7 +80,7 @@ print(myAwesomeList)
 #
 # 10. count(element)
 #   returns how many occurancies of the element are found in the list
-# 11. count(element)
+# 11. index(element)
 #   returns the first index of the element found in the list
 # -------------------------------------------------------------------------------------------------------------
 
