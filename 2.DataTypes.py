@@ -26,6 +26,9 @@ print(type([1, 2, 3]))
 # Tuple:
 print(type((1, 2, 3)))
 
+# Set:
+print(type({1, 2, 3}))
+
 # Dictionary (dict):
 print(type({"Amr": "first", "Sara": "second", "Haitham": "third"}))
 
