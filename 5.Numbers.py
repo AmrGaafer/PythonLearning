@@ -10,6 +10,7 @@
 #   to int:     int(realVar)
 #   to float:   float(intVar)
 #   to complex: complex(intVar or realVar)
+#
 # Arithmetic Operators:
 # [+]   addition
 # [-]   subtraction
@@ -18,6 +19,18 @@
 # [/]   division
 # [%]   modulus
 # [//]  floor division
+#
+# Assignment Operators:
+# [=]   assignment operator
+# [+=]  addition assignment operator
+# [-=]  subtraction assignment operator
+# [*=]  multiplication assignment operator
+# [**=] exponent assignment operator
+# [/=]  division assignment operator
+# [%=]  modulus assignment operator
+# [//=] floor division assignment operator
+# Syntax:
+#   var1 = var1 [arithmatic operator] var2  <=> var1 [arithmatic operator]= var2 
 # -------------------------------------------------------------------------------------------------------------
 
 print('\n# ********************************************* #')
@@ -54,3 +67,23 @@ print(float(-100))
 print('complex:')
 print(complex(100.2))
 print(complex(0))
+
+# Assignment operator:
+print('Assignment operator')
+x = 1
+y = 2
+
+x += y
+print(x)    #3
+x -= y
+print(x)    #1
+x *= y
+print(x)    #2
+x **= y
+print(x)    #4
+x /= y
+print(x)    #2
+x %= y
+print(x)    #0
+x //= y
+print(x)    #0
