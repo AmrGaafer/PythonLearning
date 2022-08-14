@@ -30,7 +30,15 @@
 # [%=]  modulus assignment operator
 # [//=] floor division assignment operator
 # Syntax:
-#   var1 = var1 [arithmatic operator] var2  <=> var1 [arithmatic operator]= var2 
+#   var1 = var1 [arithmatic operator] var2  <=> var1 [arithmatic operator]= var2
+#
+# Comparison Operators:
+# [==]  equal
+# [!=]  not equal
+# [<]   less than
+# [>]   greater than
+# [<=]  less than or equal
+# [>=]  greater than or equal
 # -------------------------------------------------------------------------------------------------------------
 
 print('\n# ********************************************* #')
@@ -68,8 +76,8 @@ print('complex:')
 print(complex(100.2))
 print(complex(0))
 
-# Assignment operator:
-print('Assignment operator')
+# Assignment operators:
+print('Assignment operators')
 x = 1
 y = 2
 
@@ -87,3 +95,13 @@ x %= y
 print(x)    #0
 x //= y
 print(x)    #0
+
+# Assignment operator:
+print('Comparison operators')
+
+print(10 == 50)
+print(10 != 50)
+print(10 > 50)
+print(10 < 50)
+print(10 >= 50)
+print(10 <= 50)
