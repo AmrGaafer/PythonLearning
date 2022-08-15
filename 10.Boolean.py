@@ -2,7 +2,7 @@
 # Boolean:
 # logical variable: True or False
 # Type Casting:
-#   to boolean:     bool(var), True if not empty or has a numirical value other than 0
+#   bool(var):     to boolean, True if not empty or has a numirical value other than 0
 # Boolean Operators:
 #   and, or, not
 # -------------------------------------------------------------------------------------------------------------
