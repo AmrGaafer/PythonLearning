@@ -4,7 +4,7 @@
 # \↵:   Escape New Line
 # \\:   Escape Backslash
 # \':   Escape Single Quote
-# \":   Escape Double Quotes
+# \":   Escape Double Quote
 # \n:   New Line (Line Feed)
 # \r:   Carriage Return (replaces "Charecter by Character" the operand to the left with that on the right)
 # NOTE: \n\r guarantees that the following comes in a new line without any other precedent characters
