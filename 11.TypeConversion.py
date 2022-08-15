@@ -90,6 +90,6 @@ a = [["a",1], ["b",2], ["c",3]]               # list
 print(dict(a))
 a = (("a",1), ("b",2), ("c",3))               # tuple
 print(dict(a))
-a = {{"a",1}, {"b",2}, {"c",3}}               # set
-print(dict(a))
+# a = {{"a",1}, {"b",2}, {"c",3}}             # set (not hashable variable)
+# print(dict(a))
 print('# --------------------------------------------- #')
