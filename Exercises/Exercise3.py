@@ -4,7 +4,7 @@
 # Date          15.08.2022
 # -------------------------------------------------------------------------------------------------------------
 
-print("Task#1: Numbers types:")
+print("Task#1: numbers types:")
 iVar = 0
 fVar = 0.0
 complexVar = 0+0j
@@ -13,7 +13,7 @@ print(type(iVar))
 print(type(fVar))
 print(type(complexVar))
 
-print("Task#2: Complex numbers components:")
+print("Task#2: complex numbers components:")
 complexVar = 1+2j
 print(complexVar.imag)
 print(complexVar.real)

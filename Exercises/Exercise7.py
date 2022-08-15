@@ -4,9 +4,6 @@
 # Date          15.08.2022
 # -------------------------------------------------------------------------------------------------------------
 
-from compileall import compile_path
-
-
 print("Task#1: apply bool():")
 print(1.0 == 15)
 print(bool(0))
@@ -32,7 +29,7 @@ num = 20
 print(num > num_one or num > num_two)
 print(num > num_one and num > num_two)
 
-print("Task#4: :")
+print("Task#4: mathematical operators:")
 num_one = 10
 num_two = 20
 result = num_one + num_two
