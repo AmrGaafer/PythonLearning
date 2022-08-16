@@ -360,6 +360,7 @@ print('# --------------------------------------------- #')
 #   {:.xs}  truncated string place holder with a certain length
 #   {:.xf}  float place holder with a certainn decimal point accuracy
 #   Format: 'string with {}(s) within'.format(parameters corresponding of each holder)
+#           {variable:format} (eg. {x:,})
 #   Advantage: It could be used in items rearrangement by giving the index to the place holder {index}
 #              The index precedes the column sign {index:formating}
 #   in Python 3.6 and later:
