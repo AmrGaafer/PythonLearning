@@ -4,8 +4,10 @@
 # else:
 #   code to be executed once the while condition is False
 #
-# break can be used to stop the loop
+# break:    stop the loop
 #   NOTE: it stops the whole loop including the else statement(s)
+# continue: stop the current iteration
+# pass:     skip a required block of code
 # -------------------------------------------------------------------------------------------------------------
 
 # Emample #1: Friends list
