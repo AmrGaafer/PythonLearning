@@ -205,7 +205,7 @@ show_skills('Amr', *mySkillsWish, **mySkillsDictionary)
 print('\n# ********************************************* #')
 print('Function Lambda:\n')
 
-# normal function
+# normal function inline definition
 def say_hello(name, age): return(f"Hello {name}! Your age is {age} years old")
 print(type(say_hello))
 # lambda function
@@ -215,5 +215,5 @@ print(type(hello))
 print(say_hello("Amr", 34))
 print(hello("Amr", 34))
 
-print(say_hello.__name__)
-print(hello.__name__)
+print(say_hello.__name__)       # function name
+print(hello.__name__)           # function name (lambda)
