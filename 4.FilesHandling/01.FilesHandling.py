@@ -3,29 +3,26 @@
 #   open("file name with its directory", "mode")
 #       returns a <class '_io.TextIOWrapper'> object (e.g. myFile)
 #       the different modes of this command:
-#           "a" Append      open a file to append values, create a file if does not exist
 #           "r" Read        [Default value] open a file to read and give an error if the file does not exist
 #           "w" Write       open a file to write, create a file if it does not exist
+#           "a" Append      open a file to append values, create a file if does not exist
 #           "x" Create      create a file and give an error if the file exists
 #
 #   Reading Methods:
-#       myFile.read(n)          Read the whole file or till the maximum number of characters (n) is reached
-#       myFile.readline(n))     Read the whole line or till the maximum number of characters (n) is reached
-#       myFile.readlines())     Read the whole file as a listas long as the n character reaches this list item
+#       myFile.read(n)      Read the whole file or till the maximum number of characters (n) is reached
+#       myFile.readline(n)  Read the whole line or till the maximum number of characters (n) is reached
+#       myFile.readlines(n) Read the whole file as a listas long as the n character reaches this list item
 #
-#   Writing Methods:
-#       myFile.write(String)            Write the given string in the file
-#       myFile.writelines(StringList)   Write the given string list in the file
+#   Writing/Appending Methods:
+#       myFile.write(s)     Write the given string (s) in the file
+#       myFile.writelines(s)Write the given string list (s) in the file
 #   Writing vs. Append:
 #       Write rewrites the whole file with every execution. Append starts from the end of the text file.
 #
 #   Important Methods:
-#   myFile.truncate(n):
-#       Remove the whole text except the first n given characters [only in Append Mode]
-#   myFile.tell():
-#       Return the position of the cursor [valid for all open modes]
-#   myFile.seek():
-#       Move the curser with the given offset value [valid for all open modes]
+#       myFile.truncate(n)  Remove the whole text except the first n given characters [only in Append Mode]
+#       myFile.tell()       Return the position of the cursor [valid for all open modes]
+#       myFile.seek(n)      Move the curser with the given offset value [valid for all open modes]
 #
 #   myFile.close("file name with its directory")
 # -------------------------------------------------------------------------------------------------------------
@@ -75,34 +72,33 @@ myFile.write("You are doing this right\n")
 myFile.close()
 
 myFile = open("myFileWrite.txt", "a")
-myFile.write("Hi Amr once more!\n")
-myFile.write("You are doing this really right\n")
+myFile.writelines(["Hi Amr once more!\n", "You are doing this really right\n"])
 myFile.close()
 
 print('\n# ********************************************* #')
+print('File Creation:\n')
+myFile = open("myFileCreated.txt", "x")
+myFile = open("myFileCreated.txt", "w")
+myFile.write("No Way!")
+myFile.close()
+os.remove("myFileCreated.txt")
+
+print('\n# ********************************************* #')
 print('Important Notes:\n')
-print('truncate:\n')
+print('truncate:')
 myFile = open("myFileRead2.txt", 'a')
 myFile.truncate(7)              # Remove the whole text except the first n given characters
 myFile.close()
 
-print('tell:\n')
+print('tell:')
 myFile = open("myFileRead.txt", 'r')
 print(myFile.tell())            # Return the position of the cursor (valid for all open modes)
 print(myFile.readline())
 print(myFile.tell())
 myFile.close()
 
-print('seek:\n')
+print('seek:')
 myFile = open("myFileRead.txt")
-myFile.seek(7)                  # Move the curser with the given offset value
+myFile.seek(9)                  # Move the curser with the given offset value
 print(myFile.read())
 myFile.close()
-
-print('\n# ********************************************* #')
-print('File Creation:\n')
-myFile = open("myFileReadCreated.txt", "x")
-myFile = open("myFileReadCreated.txt", "w")
-myFile.write("No Way!")
-myFile.close()
-os.remove("myFileReadCreated.txt")
