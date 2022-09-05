@@ -24,7 +24,11 @@
 #
 #  General Purpose Functions:
 #   slice(start, end, step) returns sliced version of that variable (end is mandatory)
+#   enumerate(iterable, start)
+#                           returns enumarated version of the iterable with (optionally) given start counter
+#   reversed(iterable)      returns a reversed version of the iterable (e.g. string or list)
 #   id(variable)            returns the memory id of that variable
+#   help()                  returns a help manual for the given text
 # -------------------------------------------------------------------------------------------------------------
 
 print('\n# ********************************************* #')
@@ -145,6 +149,27 @@ print(myString[slice(5)])               # end is mandatory
 print(myString[slice(5,8)])
 print('# --------------------------------------------- #')
 
+print('enumerate():')
+mySkills = ["C++", "Python", "PLC"]
+mySkillsEnum = enumerate(mySkills, 1)
+print(mySkillsEnum)
+for mySkill in mySkillsEnum:
+    print(mySkill)
+for count,skill in mySkillsEnum:
+    print(count, skill)
+print('# --------------------------------------------- #')
+
+print('reversed():')
+name = "Amr"
+print(reversed(name))
+for char in reversed(name):
+    print(char)
+names = ["Adam", "Amr", "Gaafer"]
+print(reversed(names))
+for name in reversed(names):
+    print(name)
+print('# --------------------------------------------- #')
+
 print('id():')
 num = 12
 print(id(12))
@@ -152,4 +177,8 @@ print(id(num))
 num = 14
 print(id(12))
 print(id(num))              # id changes here as the value changed
+print('# --------------------------------------------- #')
+
+print('help():')
+help("len")
 print('# --------------------------------------------- #')

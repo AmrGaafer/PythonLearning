@@ -190,7 +190,7 @@ mySkillsDictionary = {'C++': 50, 'Python': 30, 'PLC': 82}
 show_skills('Amr', *mySkillsWish, **mySkillsDictionary)
 
 # -------------------------------------------------------------------------------------------------------------
-# Function Lambda (anonymous function)
+# Function Lambda (anonymous function) - function on the fly
 #   - has no name
 #   - can be called inline wihout pre-defining
 #   - can be used in the return of another function
