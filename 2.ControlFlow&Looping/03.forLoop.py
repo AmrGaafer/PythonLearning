@@ -5,6 +5,7 @@
 #   code to be executed once the for loop is done
 # item:             user-defined variable, doesn not have to be predefined before the for loop
 # iterable_object:  sequences like list, tuples, sets, dictionaries or string of characters
+#                   range(start,stop) can be used to loop over a certain range
 #   NOTE: if item iterate over a dictionary, it iterates over the keys
 #
 # break:    stop the loop
