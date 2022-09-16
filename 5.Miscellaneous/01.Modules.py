@@ -36,6 +36,9 @@
 #       pip install pip --upgrade pip           upgrades pip
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print('\n# ********************************************* #')
 print('Built-in Modules:\n')
 import random, functools

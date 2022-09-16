@@ -8,6 +8,9 @@
 #   b. skip single and double quotes within
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print('\n# ********************************************* #')
 print('STRINGS:\n')
 msg = '"I" love'

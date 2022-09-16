@@ -7,6 +7,9 @@
 # dict()        converts to dictionary (list or tuple), needs iterable and hashable elements
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print('\n# ********************************************* #')
 print('Type Conversion:\n')
 print('str()')

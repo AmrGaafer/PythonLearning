@@ -4,6 +4,9 @@
 # Date          10.09.2022
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print("Task#1: map():")
 def remove_chars(s):
     return s[slice(1,len(s)-1)]

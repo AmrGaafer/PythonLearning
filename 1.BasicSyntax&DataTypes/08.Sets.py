@@ -41,6 +41,9 @@ print(myAwesomeSet)
 #   removes an element randomly
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print('\n# ********************************************* #')
 print('SETS METHODS:\n')
 print('clear method:')

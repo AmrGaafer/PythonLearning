@@ -31,6 +31,9 @@
 #   help()                  returns a help manual for the given text
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print('\n# ********************************************* #')
 print('Numeric Functions')
 print('sum():')

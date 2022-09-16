@@ -14,6 +14,9 @@
 # pass:     skip a required block of code
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 # Emample #1: Numbers list
 print('Emample #1: Numbers list:')
 myNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, -10, 10]

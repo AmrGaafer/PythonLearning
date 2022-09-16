@@ -8,6 +8,9 @@
 # 4. PascalCase
 # -----------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print(type(10))
 print(type(655360))
 print(type(-655360))

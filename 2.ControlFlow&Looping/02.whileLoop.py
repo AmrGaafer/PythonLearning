@@ -10,6 +10,9 @@
 # pass:     skip a required block of code
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 # Emample #1: Friends list
 print('Emample #1: Friends list:')
 myFriends = ['Abdelmaged', 'Hammam', 'Shoka', 'Sadek', 'Hany', 'Ashraf', 'Othamn', 'Ruby', 'Karem', 'Sherif', 'Hosny']

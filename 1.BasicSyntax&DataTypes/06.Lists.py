@@ -6,6 +6,9 @@
 # 4. list items are mutable (editable) -> edit, delete and add
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print('\n# ********************************************* #')
 print('LISTS:\n')
 myAwesomeList = ["string", 1, 102.5, 3+7j, True]

@@ -4,6 +4,9 @@
 # Date          16.08.2022
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print("Task#1: User string input:")
 name = input("What is your name? ").strip().capitalize()
 print(f"Hi {name}, happy to see you!")

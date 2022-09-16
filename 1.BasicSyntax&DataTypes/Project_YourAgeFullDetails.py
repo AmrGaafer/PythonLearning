@@ -2,6 +2,9 @@
 # Project: Your Age Full Details
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 # Input age
 age = int(input("What is your age? ").strip())
 print(age)

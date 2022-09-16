@@ -9,6 +9,9 @@
 #   2. You can also use the **kwargs method to accept a variable number of arguments in a function.
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print("Task#1: Function packing and unpacking dictionary:")
 def get_score(**SubjectsRatings):
     for subject, rating in SubjectsRatings.items():

@@ -28,6 +28,7 @@
 # -------------------------------------------------------------------------------------------------------------
 
 import os   # import operating system module
+os.system('cls')        # cls command
 
 # get the current working directory
 print("\nCurrent working directory:\n" + os.getcwd() + "\n")

@@ -19,6 +19,9 @@
 #       - the function can be either a pre-defined function or a lambda function
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print('\n# ********************************************* #')
 print('map:\n')
 print('Pre-defined function:')

@@ -16,6 +16,9 @@
 #   """
 # -----------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print("Hello World")
 
 # print("Comment me out!")    # This is an inline comment

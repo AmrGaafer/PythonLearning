@@ -2,6 +2,9 @@
 # Project: Membership Control
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 # List of admins
 adminsList = ['Amr', 'Adam', 'Yousuf', 'Younus', 'Maria']
 

@@ -4,6 +4,9 @@
 # Date          22.08.2022
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print("Task#1: Function definition:")
 def calculate(num1, num2, op = '+'):
     op = op.strip().lower()

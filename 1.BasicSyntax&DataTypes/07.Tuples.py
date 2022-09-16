@@ -12,6 +12,9 @@
 # the operator * repeat is valid for strings, lists and tuples
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print('\n# *********************************S************ #')
 print('TUPLES:\n')
 myAwesomeTuple = ("Amr", "Wael")

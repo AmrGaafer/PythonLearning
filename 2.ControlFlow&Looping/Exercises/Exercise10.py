@@ -4,6 +4,9 @@
 # Date          21.08.2022
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print("Task#1: Numbers printer:")
 num = int(input('Enter an integer larger than 0... ').strip())
 if num > 0:

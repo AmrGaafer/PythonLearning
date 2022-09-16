@@ -14,6 +14,9 @@
 # NOTE: to escape the escape sequence characters, use raw string "r" operator before the string
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 # Backspace:
 print("Hello  \bWorld!\b ")
 

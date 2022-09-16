@@ -4,6 +4,9 @@
 # Date          21.08.2022
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print("Task#1: Numbers printer:")
 my_nums = [15, 81, 5, 17, 20, 21, 13]
 my_nums.sort(reverse = True)

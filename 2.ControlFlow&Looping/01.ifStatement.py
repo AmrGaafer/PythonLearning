@@ -17,6 +17,9 @@
 # statement if True | if (condition) | else statement if False
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 # Collect age date
 age = int(input("What is your age? ").strip())
 

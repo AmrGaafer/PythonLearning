@@ -4,6 +4,9 @@
 # Date          20.08.2022
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 print("Task#1: Calculator:")
 num1 = int(input('Enter number#1: ').strip())
 num2 = int(input('Enter number#2: ').strip())

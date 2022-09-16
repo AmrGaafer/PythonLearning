@@ -11,6 +11,9 @@
 #           Function body
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 def function_name():        # function without return data
     print('Hello World from a function without a return!')
 

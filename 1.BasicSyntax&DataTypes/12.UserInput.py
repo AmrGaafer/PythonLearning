@@ -5,6 +5,9 @@
 # NOTE: Python supports methods chain
 # -------------------------------------------------------------------------------------------------------------
 
+import os
+os.system('cls')        # cls command
+
 firstName = input("what is your first name? ")
 secondName = input("what is your first name? ")
 lastName = input("what is your first name? ")

@@ -5,6 +5,7 @@
 # -------------------------------------------------------------------------------------------------------------
 
 import os   # import operating system module
+os.system('cls')        # cls command
 
 print("Task#1: Files Creation and Directory Inquiries:")
 for i in range(1,51):
