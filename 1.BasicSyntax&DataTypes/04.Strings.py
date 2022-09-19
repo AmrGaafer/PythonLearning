@@ -27,6 +27,15 @@ myString2 = """"Noha"
 "Nancy" """
 print(myString2)
 
+myString3 = """
+This
+is
+a
+Multiple-line
+string
+"""
+print(myString3)
+
 # -------------------------------------------------------------------------------------------------------------
 # Strings Indexing and Slicing:
 # len(var): returns the length of the variable var
@@ -350,26 +359,33 @@ print('# --------------------------------------------- #')
 #   %s      string place holder
 #   %d      digit place holder
 #   %f      float place holder
-#   %.xs    truncated string place holder with a certain length
-#   %.xf    float place holder with a certainn decimal point accuracy
-#   Format: 'string with place holder(s) within' %(parameters corresponding of each holder)
-#-------------------------------------------------------------
+#
+#   %.xs    string place holder with a maximum strings number (truncated string)
+#   %.xd    digit place holder with a minimum digits number
+#   %.xf    float place holder with a certain floating point accuracy
+#
+#   Syntax: 'string with place holder(s) within' %(parameters corresponding of each holder)
+# -------------------------------------------------------------------------------------------------------------
 # New Method: Using the place holder {}:
 #   {}      general purpose square brackets place holder
 #   {:s}    string place holder
 #   {:d}    digit place holder
 #   {:f}    float place holder
-#   {:_d}   digit place holder with seperator within afer every three digits (format money)
-#   {:.xs}  truncated string place holder with a certain length
-#   {:.xf}  float place holder with a certainn decimal point accuracy
-#   Format: 'string with {}(s) within'.format(parameters corresponding of each holder)
+#
+#   {:.xs}  string place holder with a maximum strings number (truncated string)
+#   {:.xd}  [ERROR] digit place holder with a minimum digits number
+#   {:.xf}  float place holder with a certain floating point accuracy
+#   {:_d}   digit place holder with seperator (_ or ,) within after every three digits (format money)
+#
+#   Syntax: 'string with {}(s) within'.format(parameters corresponding of each holder)
 #           {variable:format} (eg. {x:,})
+#
 #   Advantage: It could be used in items rearrangement by giving the index to the place holder {index}
 #              The index precedes the column sign {index:formating}
-#   in Python 3.6 and later:
-#           using the format operator f
-#           f'string with {variable} within'
-# Resource: https://pyformat.info/
+# -------------------------------------------------------------------------------------------------------------
+#   In Python 3.6 and later: using the format operator f
+#   Syntax: f'string with {variable:formating}'
+#   Resource: https://pyformat.info/
 # -------------------------------------------------------------------------------------------------------------
 
 print('\n# ********************************************* #')
@@ -378,20 +394,17 @@ name = 'Amr'
 namelong = 'Amr Gaafer'
 age = 34
 experience = 5.5
-print('My name is %s.' %(name))
-print('My name is %s.' %name)   # in case of one parameter, the paranthesis could be removed
-print('My name is %s. I\'m %d years old. I have %f years of experience' %(name, age, experience))
-print('My name is %s. I\'m %d years old. I have %.2f years of experience' %(namelong, age, experience))
-print('My name is %.10s. I\'m %.3d years old. I have %.2f years of experience' %(namelong, age, experience))
-print('My name is %.3s. I\'m %d years old. I have %.1f years of experience' %(namelong, age, experience))
+print('My name is %s.' %name)   # in case of one parameter, the paranthesis are not needed
+print('My name is %s. I\'m %d years old. I have %f years of experience' %(namelong, age, experience))
+print('My name is %.03s. I\'m %.1d years old. I have %.0f years of experience' %(namelong, age, experience))
+print('My name is %.20s. I\'m %.4d years old. I have %.1f years of experience' %(namelong, age, experience))
 print('# --------------------------------------------- #')
 
 print('STRING NEW FORMATTING:\n')
 print('My name is {}.'.format(name))
-print('My name is {}. I\'m {} years old. I have {} years of experience'.format(name, age, experience))
-print('My name is {}. I\'m {} years old. I have {} years of experience'.format(namelong, age, experience))
-print('My name is {:.3s}. I\'m {:d} years old. I have {:.1f} years of experience'.format(namelong, age, experience))
-print('My name is {:.10s}. I\'m {:d} years old. I have {:.2f} years of experience'.format(namelong, age, experience))
+print('My name is {:s}. I\'m {:d} years old. I have {:f} years of experience'.format(namelong, age, experience))
+print('My name is {:.03s}. I\'m {:d} years old. I have {:.0f} years of experience'.format(namelong, age, experience))
+print('My name is {:.20s}. I\'m {:d} years old. I have {:.1f} years of experience'.format(namelong, age, experience))
 
 print('# --------------------------------------------- #')
 
@@ -409,12 +422,12 @@ print('The family members are: {}, {} and {}.'.format(a, b, c))
 print('The family members are: {2}, {1} and {0}.'.format(a, b, c))
 
 a, b, c =  1, 2, 3
-print('The family members are: {}, {} and {}.'.format(a, b, c))
-print('The family members are: {2}, {1} and {0}.'.format(a, b, c))
-print('The family members are: {2:d}, {1:f} and {0:.2f}.'.format(a, b, c))
+print('The numbers members are: {}, {} and {}.'.format(a, b, c))
+print('The numbers members are: {2}, {1} and {0}.'.format(a, b, c))
+print('The numbers members are: {2:d}, {1:f} and {0:.2f}.'.format(a, b, c))
 print('# --------------------------------------------- #')
 
 print('format using the f operator:')
-print('The family members are: {a}, {b} and {c}.')
-print(f'The family members are: {a}, {b} and {c}.')
-print(f'The family members are: {c}, {b} and {a}.')
+print('The numbers members are: {a}, {b} and {c}.')
+print(f'The numbers members are: {a}, {b} and {c}.')
+print(f'The numbers members are: {c:.1f}, {b:d} and {a:.2f}.')
