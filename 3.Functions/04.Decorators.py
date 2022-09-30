@@ -2,12 +2,15 @@
 # Decorators (Meta programming):
 #   Higher order function (Function that accepts another function as a parameter)
 #   - wrap other functions and enhance their behaviour (take a function argument and returns it with added functionality)
-#   Syntax: Sugar Syntax Method:
-#           @Decorator_function
+#   Syntax:
 #           def function_DecoratingFunction():...
 #               ...
 #               function_ToBeDocarated()
 #               ...
+#
+#   Implementation: Sugar Syntax Method:
+#           @Decorator_function
+#           def function():     # decorated function
 #
 #           - function_DecoratingFunction() has to pass the paramters needed to the wraped function
 #           - function_ToBeDocarated()      has to have matching blueprint to to wrapped function
@@ -66,3 +69,6 @@ def calculate(n1, n2):
 calculate(1, 2),
 print('-----------------------')
 calculate(-1, 2)
+
+print('\n# ********************************************* #')
+print('Example (Speed Test):')
