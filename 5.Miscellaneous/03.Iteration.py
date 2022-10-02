@@ -48,7 +48,6 @@ def myGenerator():
     yield 'm'
     yield 'r'
 
-
 print(myGenerator())
 print(type(myGenerator()))
 myIterator = myGenerator()

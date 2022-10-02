@@ -2,6 +2,8 @@
 # datetime Module: has datetime method than contain date and time methods
 #   Formating:
 #       Python String-Format-Time (strftime) cheatsheet: https://strftime.org/
+#       Syntax:
+#           datetimeParameter.strftime('strftime code')
 # -------------------------------------------------------------------------------------------------------------
 
 import os
