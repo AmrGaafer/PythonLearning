@@ -5,8 +5,8 @@
 #   round(float, accuracy)  returns the round (integer) of a float with (optionally) certain accuracy (float)
 #   abs(number)             returns the distance between the number and zero
 #   pow(base, exp, mod)     returns the base^exp and (optionally) the modulus
-#   min(iterator or itema)  returns the minimum value element (numerical or strings)
-#   max(iterator or itema)  returns the maximum value element (numerical or strings)
+#   min(iterator or items)  returns the minimum value element (numerical or strings)
+#   max(iterator or items)  returns the maximum value element (numerical or strings)
 #   bin(integer)            returns the binary value of the argument
 #   range(start, end, step) returns a <class 'range'> with (optionally) start other than 0
 #                                                      and (optionally) certain step

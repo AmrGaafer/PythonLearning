@@ -1,8 +1,8 @@
 # -------------------------------------------------------------------------------------------------------------
 # Functions: resuable block of code and does a certain task
 #   - run when they are called
-#   - accept element(s) to deal with [Parameter(s)]: variable values
-#   - accept element(s) when called [Argument(s)]:   fixed values
+#   - parameter is the variable listed inside the parentheses in the function definition
+#   - argument is the value that are sent to the function when it is called
 #   - can return data when the routine is done / can perform a task without returning data
 #   - pervent DRY (Don't Repeat Yourself)
 #   - there are Built-in functions and user-defined function
@@ -66,7 +66,7 @@ say_hello()
 #   2. Local scope is inside the function
 #       - locally defined varialbes are not callable form outside its scope
 #       - to define a variable within the local (function) scope as a global scope variable
-#           => add the word "global" before the variable name and in another line assigne the value
+#           => add the word "global" before the variable name and in another line assign the value
 # -------------------------------------------------------------------------------------------------------------
 
 print('\n# ********************************************* #')
@@ -107,24 +107,30 @@ print(factorial(1))
 print(factorial(0))
 
 print('\nExample2:')
-def cleanWord(word):
-    print(f'psition1: {word}')
-    
-    if len(word) == 1:
-        return word
-    
-    if word[0] == word[1]:
-        print(f'psition2: {word}')
-        return cleanWord(word[1:])
+def cleanWord(txt):     # solution without function recursion
+    prevChar = ''
+    cleanedTxt = ''
+    for char in txt:
+        if char != prevChar:
+            cleanedTxt = cleanedTxt + char
+        prevChar = char
+    return cleanedTxt
+
+def cleanWord2(txt):    # solution with function recursion
+    if len(txt) > 1:
+        if txt[0] == txt[1]:
+            return cleanWord2(txt[1:])          # ignore the duplicate character and test the rest
+        else:
+            return txt[0]+cleanWord2(txt[1:])   # consider that character and test the rest
     else:
-        print(f'psition3: {word}')
-        return word[0] + cleanWord(word[1:])
+        return txt
 
 print(cleanWord('WWWooooooorrrrldd'))
+print(cleanWord2('WWWooooooorrrrldd'))
 
 # -------------------------------------------------------------------------------------------------------------
-# Function packing and unpacking arguments (*Arguments)
-#   the asterisk (*) operator before the argument unpacks the list elements
+# Function packing and unpacking arguments (*Args)
+#   the asterisk (*) operator before the argument unpacks the arguments (all iterables except dictionary)
 #   Syntax:
 #       def functionName(*argument):    # unpacks all the arguments in a tuple
 #           Function body
@@ -133,24 +139,45 @@ print(cleanWord('WWWooooooorrrrldd'))
 print('\n# ********************************************* #')
 print('Function packing and unpacking arguments (*Arguments):\n')
 
-myList = [' hammam  ', 'shoka', '  sadek', 'ashraf']
-print(myList)
-print(*myList)      # asterisk operator unpacks the list
+def print_list(*x):                     # unpacks the arguments and prints each single argument
+    print(x)
 
-def say_hello(name, *friends):          # packs all the arguments in a tuple
+def say_hello(name, *friends):          # unpacks all the arguments
     print(friends, end = ' ')
     print(f'is type: {type(friends)}')  # tuple
     print(name.strip().capitalize() + ' has this/these friend(s):')
     for member in friends:              # unpacks all the arguments
         print(f'{friends.index(member)+1}. {member.strip().capitalize()}')
 
+def spell_word(*word):
+    word_len = len(word)
+    for char in word:
+        if word.index(char) != word_len-1:
+            print(char, end = ' - ')
+        else:
+            print(char)
+
+# function call with arguments
+print_list(34,"Do you like Python?", "Of course")
+
+myList = [' hammam  ', 'shoka', '  sadek', 'ashraf']
+print(myList)
+print(*myList)      # asterisk operator unpacks the list
 # function call with arguments
 say_hello('Amr', ' hammam  ', 'shoka', '  sadek', 'ashraf')
 # function call with parameters
 say_hello('Amr', *myList)
 
+myWord = 'Amor'
+print(myWord)
+print(*myWord)
+# function call with arguments
+spell_word('A', 'm', 'o', 'r')
+# function call with parameters
+spell_word(*myWord)
+
 # -------------------------------------------------------------------------------------------------------------
-# Function packing and unpacking arguments (**Keyword Arguments (Dictionary))
+# Function packing and unpacking arguments (**KWArgs)
 #   the double asterisk (**) operator before the argument unpacks the dictionary
 #   Syntax:
 #       def functionName(**argument dictionary):    # unpacks all the arguments in a tuple
