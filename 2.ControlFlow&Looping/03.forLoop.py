@@ -8,9 +8,15 @@
 #                   range(start,stop) can be used to loop over a certain range
 #   NOTE: if item iterate over a dictionary, it iterates over the keys
 #
+# special syntax:
+#   expression for item initerable_object
+#       - returns sequence of expression calculations for each for-loop iteration
+#       - to save the output as a list put the above syntax in []
+#       - to save the output as a set put the above syntax in {}
+#
 # break:    stop the loop
 #   NOTE: it stops the whole loop including the else statement(s)
-# continue: stop the current iteration
+# continue: stop the current iteration and start the next one if possible
 # pass:     skip a required block of code
 # -------------------------------------------------------------------------------------------------------------
 
