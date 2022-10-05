@@ -1,10 +1,11 @@
 # -------------------------------------------------------------------------------------------------------------
 # Type Conversion:
-# str()         converts to string
-# list()        converts to list (string, set, tuple, or dictionary), needs iterable elements
-# tuple()       converts to tuple (string, list, set, or dictionary), needs iterable elements
-# set()         converts to set (string, list, tuple, or dictionary), needs iterable elements
-# dict()        converts to dictionary (list or tuple), needs iterable and hashable elements
+# str()             converts to string
+# list()            converts to list (string, set, tuple, or dictionary), needs iterable elements
+# tuple()           converts to tuple (string, list, set, or dictionary), needs iterable elements
+# set()             converts to set (string, list, tuple, or dictionary), needs iterable elements
+# dict()            converts to dictionary (list or tuple), needs iterable and hashable elements
+# pydoc.locate()    converts string to type object
 # -------------------------------------------------------------------------------------------------------------
 
 import os
