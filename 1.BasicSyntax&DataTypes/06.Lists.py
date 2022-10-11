@@ -53,7 +53,7 @@ print(myAwesomeList)
 
 # -------------------------------------------------------------------------------------------------------------
 # Lists Methods:
-# 1.  apend(element)
+# 1.  append(element)
 #   appends an element by the end of the list, the appended element is added as just one element
 #   the element type can be: int, float, string, complex or list
 # 2.  insert(index, object)
@@ -89,7 +89,7 @@ print(myAwesomeList)
 
 print('\n# ********************************************* #')
 print('LISTS METHODS:\n')
-print('apend method:')
+print('append method:')
 myNames = ["Amr"]
 print(myNames)
 

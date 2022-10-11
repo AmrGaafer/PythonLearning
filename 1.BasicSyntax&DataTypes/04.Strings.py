@@ -275,6 +275,7 @@ print('# --------------------------------------------- #')
 # 7. isidentifier()                                 checks if string is a valid identifier
 # 8. isalpha()                                      checks if string contains letters from a-z
 # 9. isalnum()                                      checks if string contains letters from a-z and numbers 0-9
+# 10.isnumeric()                                    checks if string contains numbers 0-9
 # -------------------------------------------------------------------------------------------------------------
 
 print('\n# ********************************************* #')
@@ -351,6 +352,15 @@ a = 'AMRWAEL3D'
 print(a.isalnum())          # True
 a = 'Amr Wael'
 print(a.isalnum())
+print('# --------------------------------------------- #')
+
+print('isnumeric method:')
+a = '123456'
+print(a.isnumeric())        # True
+a = '1234.56'
+print(a.isnumeric())
+a = 'Amr88'
+print(a.isnumeric())
 print('# --------------------------------------------- #')
 
 # -------------------------------------------------------------------------------------------------------------
