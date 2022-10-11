@@ -1,5 +1,7 @@
 # -------------------------------------------------------------------------------------------------------------
 # Type Conversion:
+# int()             converts string to integer
+# float()           converts string to float
 # str()             converts to string
 # list()            converts to list (string, set, tuple, or dictionary), needs iterable elements
 # tuple()           converts to tuple (string, list, set, or dictionary), needs iterable elements
@@ -13,6 +15,16 @@ os.system('cls')        # cls command
 
 print('\n# ********************************************* #')
 print('Type Conversion:\n')
+print('int()')
+a = '10'
+print(int(a))
+print('# --------------------------------------------- #')
+
+print('float()')
+a = '10.21'
+print(float(a))
+print('# --------------------------------------------- #')
+
 print('str()')
 a = 10                      # int
 print(str(a))
