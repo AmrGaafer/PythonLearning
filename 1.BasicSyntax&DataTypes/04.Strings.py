@@ -74,6 +74,7 @@ print(myString[2:6])
 print(myString[7:])
 print(myString[::2])
 print(myString[:])      # prints the whole string
+print(myString[::-1])   # prints the whole string (reversed)
 
 # -------------------------------------------------------------------------------------------------------------
 # Strings Methods:

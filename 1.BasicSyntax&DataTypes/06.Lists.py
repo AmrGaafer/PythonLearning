@@ -39,6 +39,8 @@ print(myAwesomeList[2:])    # items 2 till the end
 print(myAwesomeList[:4])    # start till item 3
 print(myAwesomeList[::2])   # all items with step 2
 print(myAwesomeList[:])     # all list
+print(myAwesomeList[::])    # all list
+print(myAwesomeList[::-1])  # all list reversed
 
 # Edit
 print('Edit:')
