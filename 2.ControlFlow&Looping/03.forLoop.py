@@ -9,11 +9,14 @@
 #   NOTE: if item iterate over a dictionary, it iterates over the keys
 #
 # special syntax (List Comprehension):
-#   expression for item initerable_object
+#   value for item initerable_object
 #   e.g: x for x in range(n)
-#       - returns sequence of expression calculations for each for-loop iteration
+#       - returns sequence of value calculations for each for-loop iteration
 #       - to save the output as a list put the above syntax in []
 #       - to save the output as a set put the above syntax in {}
+#   value for item initerable_object if condition
+#   e.g: x for x in range(n) if x > 0
+#       - returns sequence of value calculations for each for-loop iteration if the condition is satisfied
 #
 # break:    stop the loop
 #   NOTE: it stops the whole loop including the else statement(s)
