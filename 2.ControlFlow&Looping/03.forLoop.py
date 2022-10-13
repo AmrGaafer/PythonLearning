@@ -8,8 +8,9 @@
 #                   range(start,stop) can be used to loop over a certain range
 #   NOTE: if item iterate over a dictionary, it iterates over the keys
 #
-# special syntax:
+# special syntax (List Comprehension):
 #   expression for item initerable_object
+#   e.g: x for x in range(n)
 #       - returns sequence of expression calculations for each for-loop iteration
 #       - to save the output as a list put the above syntax in []
 #       - to save the output as a set put the above syntax in {}
@@ -76,3 +77,8 @@ for member, skills in members.items():
     print(f'{member} has  has the following skills:')
     for skillKey in skills:
         print(f'\t{skillKey} with {str(skills[skillKey])}%')
+
+# Emample #6: List Comprehension:
+print('Emample #6: List Comprehension:')
+print([x for x in range(10)])
+print({x for x in range(10)})
