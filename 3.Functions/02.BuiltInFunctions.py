@@ -2,6 +2,7 @@
 # Built-in Functions:
 #  Numeric Functions:
 #   sum(iterable, start)    returns the sum of the elements, (optionally) summation start can be provided
+#   eval(expression)        returns the value of the expression given as a string
 #   round(float, accuracy)  returns the round (integer) of a float with (optionally) certain accuracy (float)
 #   abs(number)             returns the distance between the number and zero
 #   pow(base, exp, mod)     returns the base^exp and (optionally) the modulus
@@ -40,6 +41,13 @@ print('sum():')
 print(sum([1, 2, 3]))
 print(sum([1, 2, 3], 12))
 print(sum([1, 2, 3], -12))
+print('# --------------------------------------------- #')
+
+print('Numeric Functions')
+print('eval():')
+print(eval('5*6'))
+x= 24
+print(eval('x/6'))
 print('# --------------------------------------------- #')
 
 print('round():')
