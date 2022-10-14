@@ -75,6 +75,12 @@ print(myString[7:])
 print(myString[::2])
 print(myString[:])      # prints the whole string
 print(myString[::-1])   # prints the whole string (reversed)
+print('# --------------------------------------------- #')
+
+# Reversing (Advanced)
+a = 'abcd'
+myList = [a[i:]+a[:i] for i in range(len(a))]
+print(myList)
 
 # -------------------------------------------------------------------------------------------------------------
 # Strings Methods:
