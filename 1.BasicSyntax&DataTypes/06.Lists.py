@@ -45,12 +45,14 @@ print(myAwesomeList[::-1])  # all list reversed
 # Edit
 print('Edit:')
 myAwesomeList = ['one', 'two', 'three', 15, 100.5, False]
+myAwesomeList2 = [1, 2, 3, 4]
+print(myAwesomeList + myAwesomeList2)   # adding
 print(myAwesomeList)
-myAwesomeList[0:3] = [1, 2 , 3 , 4] # edit
+myAwesomeList[0:3] = [1, 2 , 3 , 4]     # edit
 print(myAwesomeList)
-myAwesomeList[0:4] = []             # delete
+myAwesomeList[0:4] = []                 # delete
 print(myAwesomeList)
-#myAwesomeList[4] = 5               # add is not possible this way
+#myAwesomeList[4] = 5                   # element add is not possible this way
 #print(myAwesomeList)
 
 # -------------------------------------------------------------------------------------------------------------
