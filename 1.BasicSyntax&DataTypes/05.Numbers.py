@@ -39,6 +39,9 @@
 # [>]   greater than
 # [<=]  less than or equal
 # [>=]  greater than or equal
+#
+# Attributes:
+# is_integer(float)      returns True if the float is a whole and has no fraction
 # -------------------------------------------------------------------------------------------------------------
 
 import os
@@ -108,3 +111,12 @@ print(10 > 50)
 print(10 < 50)
 print(10 >= 50)
 print(10 <= 50)
+
+# Attributes:
+print('is_integer() attribute:')
+x= 3.000
+print(x.is_integer())
+#x= 5
+#print(x.is_integer())  # Error
+x= 3.0001
+print(x.is_integer())
