@@ -44,8 +44,8 @@ x = "Amr is learnign Python"
 
 print(x)
 
-# Reserved Words:
-help("keywords")
+# Reserved Keywords:
+help("keywords")        #from keyword import kwlist
 
 # Testing 2
 a, b, c = 1, 2, 5
