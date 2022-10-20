@@ -9,14 +9,17 @@
 #   NOTE: if item iterate over a dictionary, it iterates over the keys
 #
 # special syntax (List Comprehension):
-#   value for item initerable_object
+#   Template#1: value for item initerable_object
 #   e.g: x for x in range(n)
 #       - returns sequence of value calculations for each for-loop iteration
 #       - to save the output as a list put the above syntax in []
 #       - to save the output as a set put the above syntax in {}
-#   value for item initerable_object if condition
+#   Template#2: value for item initerable_object if condition
 #   e.g: x for x in range(n) if x > 0
 #       - returns sequence of value calculations for each for-loop iteration if the condition is satisfied
+#   Template#3: value1 if condition else value2 for item initerable_object
+#   e.g: a if x > 0 else b for x in range(n)
+#       - returns sequence of value calculations (a or b) for each for-loop iteration based on the shorthand If Else
 #
 # break:    stop the loop
 #   NOTE: it stops the whole loop including the else statement(s)
@@ -85,3 +88,9 @@ for member, skills in members.items():
 print('Emample #6: List Comprehension:')
 print([x for x in range(10)])
 print({x for x in range(10)})
+
+print([x for x in range(10) if x > 5])
+print({x for x in range(10) if x > 5})
+
+print([1 if x > 5 else 0 for x in range(10)])
+print({1 if x > 5 else 0 for x in range(10)})
