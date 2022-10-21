@@ -7,6 +7,8 @@
 #   and, or, not
 # Bitwise Operators:
 #   <<(left shift), >>(right shift), &, |, ^(XOR), and ~(-x-1)
+# Identity Operators:
+#   is, is not
 # Membership Operators:
 #   in, not in
 #   Syntax: x in y | x not in y
@@ -48,6 +50,12 @@ print("bitwise and:  {0:b}".format(int('11111111', 2) & int('10101010', 2)))
 print("bitwise or:   {0:b}".format(int('11111111', 2) | int('10101010', 2)))
 print("bitwise xor:  {0:b}".format(int('11111111', 2) ^ int('10101010', 2)))
 print("-value-a:     {0:b}".format(~ int('10101010', 2)))
+
+print('Identity Operators:')
+print(type(5) is int)
+print(type('s') is eval("str"))
+print(type(5+3j) is complex)
+print(type(0.0) is float)
 
 print('Membership Operators:')
 mySet = ['doctor', 'engineer', 'farmer', 'worker']
