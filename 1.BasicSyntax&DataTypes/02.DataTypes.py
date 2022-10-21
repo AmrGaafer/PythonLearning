@@ -11,6 +11,10 @@
 import os
 os.system('cls')        # cls command
 
+# String (str):
+print(type("Hi!"))
+
+# int:
 print(type(10))
 print(type(655360))
 print(type(-655360))
@@ -19,9 +23,6 @@ print(type(-655360))
 print(type(10.0))
 print(type(655360.1))
 print(type(-655360.2222))
-
-# String (str):
-print(type("Hi!"))
 
 # List:
 print(type([1, 2, 3]))
