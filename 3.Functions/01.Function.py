@@ -9,6 +9,9 @@
 #   Syntax:
 #       def functionName(argument(s)/parameter(s)):
 #           Function body
+#
+#   NOTE: method is a function that is called using dot (.) opertator
+#         e.g. string.capitalize()
 # -------------------------------------------------------------------------------------------------------------
 
 import os

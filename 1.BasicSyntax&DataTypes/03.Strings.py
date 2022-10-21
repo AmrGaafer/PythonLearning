@@ -182,43 +182,53 @@ print(myList)
 # 06. count("searched text", start index, end index)
 #   returns the number of incidents of the searched text in the whole string
 #   by default the start is 0
-#   by default the ens is the end of the string
+#   by default the end is the end of the string
 # 07. index("sub string", start index, end index)
 #   returns the index of of the first incident of sub string in the whole string
 #   by default the start is 0
-#   by default the ens is the end of the string
+#   by default the end is the end of the string
 #   NOTE: returns an error if the sub string is not found
-# 08. find("sub string", start index, end index)
+# 08. rindex("sub string", start index, end index)
+#   returns the index of of the last incident of sub string in the whole string
+#   by default the start is the end of the string
+#   by default the end is 0
+#   NOTE: returns an error if the sub string is not found
+# 09. find("sub string", start index, end index)
 #   returns the index of of the first incident of sub string in the whole string
 #   by default the start is 0
 #   by default the end is the end of the string
 #   NOTE: returns -1 if the sub string is not found
+# 10. rfind("sub string", start index, end index)
+#   returns the index of of the first incident of sub string in the whole string
+#   by default the start is end of the string
+#   by default the end is the 0
+#   NOTE: returns -1 if the sub string is not found
 #
-# 09. title()
+# 11. title()
 #   returns the string in a title form (words begin with capital and letters after numbers are capital)
-# 10. capitalize()
+# 12. capitalize()
 #   returns the string in a capital form (first word begins with capital, the rest is small)
-# 11. upper()
+# 13. upper()
 #   returns the string in a upper case form (words in capital letters)
-# 12. lower()
+# 14. lower()
 #   returns the string in a lower case form (words in small letters)
-# 13. swapcase()
+# 15. swapcase()
 #   returns a swapped case string
 #
-# 14. split("seperator", max split), rsplit("seperator", max split)
+# 16. split("seperator", max split), rsplit("seperator", max split)
 #   returns a list of strings
 #   rsplit starts counting to max split from the right
 #   by default the seperator is the blank space
 #   by default the max split is infinity
-# 15. 'seperator'.join(Iterable)
+# 17. 'seperator'.join(Iterable)
 #   joins the elements of a list into one string
-# 16. splitlines()
+# 18. splitlines()
 #   returns a list of strings, each line is a list element
 #
-# 17. expandtabs(tab size)
+# 19. expandtabs(tab size)
 #   returns the string with the modified tab size
 #
-# 18. replace(old value, new value, count)
+# 20. replace(old value, new value, count)
 #   (optional) replaces certain count of incidents
 # -------------------------------------------------------------------------------------------------------------
 
@@ -283,14 +293,28 @@ print('index method:')
 a = 'Amr amr AmR amr Amr aMr'
 print(a.index('Amr'))           # 0
 print(a.index('Amr', 1))        # 16
-#print(a.index('Amr', 17))       # Error
+#print(a.index('Amr', 17))      # Error
+print('# --------------------------------------------- #')
+
+print('rindex method:')
+a = 'Amr amr AmR amr Amr aMr'
+print(a.rindex('Amr'))           # 16
+print(a.rindex('Amr', 0, 7))     # 0
+#print(a.rindex('Amr', 17))      # Error
 print('# --------------------------------------------- #')
 
 print('find method:')
 a = 'Amr amr AmR amr Amr aMr'
-print(a.find('Amr'))           # 0
-print(a.find('Amr', 1))        # 16
-print(a.find('Amr', 17))       # -1
+print(a.find('Amr'))             # 0
+print(a.find('Amr', 1))          # 16
+print(a.find('Amr', 17))         # -1
+print('# --------------------------------------------- #')
+
+print('rfind method:')
+a = 'Amr amr AmR amr Amr aMr'
+print(a.rfind('Amr'))             # 16
+print(a.rfind('Amr', 0, 7))       # 0
+print(a.rfind('Amr', 17))         # -1
 print('# --------------------------------------------- #')
 
 print('title method:')

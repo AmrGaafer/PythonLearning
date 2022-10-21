@@ -102,7 +102,7 @@ print(x)    #0
 x //= y
 print(x)    #0
 
-# Assignment operator:
+# Comparison operators:
 print('Comparison operators')
 
 print(10 == 50)
