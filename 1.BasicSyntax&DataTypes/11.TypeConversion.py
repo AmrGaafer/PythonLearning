@@ -1,6 +1,7 @@
 # -------------------------------------------------------------------------------------------------------------
 # Type Conversion:
 # int(, base)       converts string to integer, by default base is 10 and it can be given
+#                   NOTE: int(float) acts like a math.ceil() function
 # float()           converts string to float
 # str()             converts to string
 # list()            converts to list (string, set, tuple, or dictionary), needs iterable elements
@@ -19,6 +20,8 @@ print('int()')
 a = '10'
 print(int(a))
 print(int(a, 16))
+a = 15.9
+print(int(a))
 print('# --------------------------------------------- #')
 
 print('float()')
