@@ -8,7 +8,8 @@
 #   pow(base, exp, mod)     returns the base^exp and (optionally) the modulus
 #   min(iterator or items)  returns the minimum value element (numerical or strings)
 #   max(iterator or items)  returns the maximum value element (numerical or strings)
-#   bin(integer)            returns the binary value of the argument
+#   bin(integer)            returns the binary string value of the argument
+#   hex(integer)            returns the hex string value of the argument
 #   range(start, end, step) returns a <class 'range'> with (optionally) start other than 0
 #                                                      and (optionally) certain step
 #                               - the range doesn't include the end
