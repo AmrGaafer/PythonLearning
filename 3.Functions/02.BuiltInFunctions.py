@@ -25,10 +25,16 @@
 #                               - the line end is by default "\n" and can be modified
 #
 #  General Purpose Functions:
+#   zip(list1, list2)       returns an iterator that combines multiple iterables into one sequence of tuples
+#                           each tuple contains the elements in that position from all iterables
+#                           - list(zip(list1, list2)) produces list of tuples (iterable)
+#                           - the zipped list length is equal to the shortest input list
+#   zip(*lst_of_tpl)        returns tuples from the unzipped list
+#   enumerate(iterable, st) returns an ierator holds an enumarated version of the iterable
+#                           with (optionally) given start (st) counter
 #   slice(start, end, step) returns sliced version of that variable (end is mandatory)
-#   enumerate(iterable, start)
-#                           returns enumarated version of the iterable with (optionally) given start counter
 #   reversed(iterable)      returns a reversed version of the iterable (e.g. string or list)
+#                           correspoding to iterable[::-1]
 #   id(variable)            returns the memory id of that variable
 #   help()                  returns a help manual for the given text
 # -------------------------------------------------------------------------------------------------------------
@@ -89,13 +95,11 @@ print('# --------------------------------------------- #')
 print('range():')
 print(type(range(4)))
 print(range(4))
+print(list(range(4)))
 print(*range(4))
-myList = [*range(0)]
-print(myList)
-myList = [*range(10)]
-print(myList)
-myList = [*range(0, 20, 2)]
-print(myList)
+print([*range(0)])
+print(list(range(10)))
+print(list(range(0, 20, 2)))
 print('# --------------------------------------------- #')
 
 print('\n# ********************************************* #')
@@ -104,20 +108,20 @@ print('all():')
 name = "Amr"
 print(all(name))
 
-list = [True, True, True]
-print(all(list))
-list = [True, True, False]
-print(all(list))            # False
+lst = [True, True, True]
+print(all(lst))
+lst = [True, True, False]
+print(all(lst))            # False
 
-list = [1 , 2, 3]
-print(all(list))
-list = [1 , 2, []]
-print(all(list))            # False
+lst = [1 , 2, 3]
+print(all(lst))
+lst = [1 , 2, []]
+print(all(lst))            # False
 
-list = [1, 2, 3]
-print(all(list))
-list = [1, 0, 3]
-print(all(list))            # False
+lst = [1, 2, 3]
+print(all(lst))
+lst = [1, 0, 3]
+print(all(lst))            # False
 
 set = {1, 2, 3}
 print(all(set))
@@ -131,12 +135,12 @@ print(all(dict))            # False
 print('# --------------------------------------------- #')
 
 print('any():')
-list = [1 , 2, 3]
-print(any(list))
-list = [1 , 2, []]
-print(any(list))            # False
-list = [0]
-print(any(list))            # False
+lst = [1 , 2, 3]
+print(any(lst))
+lst = [1 , 2, []]
+print(any(lst))             # False
+lst = [0]
+print(any(lst))             # False
 set = {0}
 print(any(set))             # False
 dict = {0 : "Apple"}
@@ -155,6 +159,31 @@ print('# --------------------------------------------- #')
 
 print('\n# ********************************************* #')
 print('General Purpose Functions')
+print('zip():')
+lst1 = ['A', 'B', 'C', 'D', 'E']
+lst2 = list(range(10))
+zipped = zip(lst1, lst2)        # iterator 
+print(zipped)
+zipped = list(zipped)           # iterable (list)
+print(zipped)
+tpl1, tpl2 = zip(*zipped)
+print(tpl1)
+print(tpl2)
+print('# --------------------------------------------- #')
+
+print('enumerate():')
+mySkills = ["C++", "Python", "PLC"]
+print(type(enumerate(mySkills, 1)))
+mySkillsEnum = enumerate(mySkills, 1)   # iterator
+print(mySkillsEnum)
+mySkillsEnum = list(mySkillsEnum)       # iterable (list)
+print(mySkillsEnum)
+for mySkill in mySkillsEnum:
+    print(mySkill)
+for count,skill in mySkillsEnum:
+    print(count, skill)
+print('# --------------------------------------------- #')
+
 print('slice():')
 myString = '0123456789'
 print(myString[5:8])
@@ -164,19 +193,10 @@ print(myString[slice(5)])               # end is mandatory
 print(myString[slice(5,8)])
 print('# --------------------------------------------- #')
 
-print('enumerate():')
-mySkills = ["C++", "Python", "PLC"]
-mySkillsEnum = enumerate(mySkills, 1)
-print(mySkillsEnum)
-for mySkill in mySkillsEnum:
-    print(mySkill)
-for count,skill in mySkillsEnum:
-    print(count, skill)
-print('# --------------------------------------------- #')
-
 print('reversed():')
 name = "Amr"
-print(reversed(name))
+print(str(reversed(name)))
+print(name[::-1])
 for char in reversed(name):
     print(char)
 names = ["Adam", "Amr", "Gaafer"]

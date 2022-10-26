@@ -1,12 +1,12 @@
 # -------------------------------------------------------------------------------------------------------------
+# INDEFINITE ITERATION: while loops are ideal when the iterations need to continue until a condition is met.
 # while condition_is_True:
 #   code to be executed as long as while condition is True
 # else:
 #   code to be executed once the while condition is False
 #
-# break:    stop the loop
-#   NOTE: it stops the whole loop including the else statement(s)
-# continue: stop the current iteration
+# break:    stop the loop, including the else statement(s)
+# continue: stop the current iteration and start the next one if possible
 # pass:     skip a required block of code
 # -------------------------------------------------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ if len(myFavWeb) > 0:
     i = 0
     while i < len(myFavWeb):
         print(f'{str(i+1).zfill(2)}. {myFavWeb[i]}')
-        i += 1  # i = i+1
+        i += 1
 
 # Example #3: Simple password guess
 print('Example #2: Simple password guess:')
