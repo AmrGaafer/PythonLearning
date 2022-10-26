@@ -195,7 +195,7 @@ print('# --------------------------------------------- #')
 
 print('reversed():')
 name = "Amr"
-print(str(reversed(name)))
+print(reversed(name))
 print(name[::-1])
 for char in reversed(name):
     print(char)
