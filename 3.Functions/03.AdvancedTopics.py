@@ -12,8 +12,8 @@
 #       - expects a boolean return from the function
 #       - filters out all iterable elements for which the function returns True
 #
-#   3. reduce(function, iterator): returns the result of the reduce object
-#       - accepts a function + iterator
+#   3. reduce(function, iterator, initial_value): returns the result of the reduce object
+#       - accepts a function + iterator + (Optional) initial_value
 #       - runs the function on the first two elements of the iterator
 #       - then, runs the functin on the result and the third element of the iterator, and so on...
 #       - the function can be either a pre-defined function or a lambda function
@@ -62,4 +62,14 @@ from functools import reduce
 myNums = [1, 8, 2, 9, 12]
 myResult = reduce(lambda num1, num2: num1+num2, myNums)
 print(myResult)
+print('# --------------------------------------------- #')
+
+def chain(init_val, functions):
+    return reduce(lambda x, f: f(x), functions, init_val)
+
+def add10(i) -> int:
+    return i + 10
+def sub50(i) -> int:
+    return i - 50
+print(chain(5, [add10, add10, sub50, add10]))
 print('# --------------------------------------------- #')

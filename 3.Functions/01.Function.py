@@ -5,10 +5,13 @@
 #   - argument is the value that are sent to the function when it is called
 #   - can return data when the routine is done / can perform a task without returning data
 #   - pervent DRY (Don't Repeat Yourself)
-#   - there are Built-in functions and user-defined function
+#   - there are Built-in functions and user-defined functions
 #   Syntax:
 #       def functionName(argument(s)/parameter(s)):
 #           Function body
+#       - passing the value(s) to the arguments in two ways:
+#           a. by position: the sequence of the arguments passing may differ than the defualt definition
+#           b. by value:    the sequence of the arguments passing has to be similar to the defualt definition
 #
 #   NOTE: method is a function that is called using dot (.) opertator
 #         e.g. string.capitalize()
@@ -31,7 +34,10 @@ print(text)
 def say_hello(firstName, SecondName, LastName):
     print(f"Hello {firstName.strip().capitalize()} {SecondName.strip().capitalize():.1s}. {LastName.strip().capitalize()} from a function!")
 
+# function call and passing arguments by value
 say_hello("amr", "wael", "gaafer")
+# function call and passinf arguments by position
+say_hello(SecondName= 'wael', firstName= 'amr', LastName= 'gaafer')
 
 def addition(a, b):
     if type(a) != int or type(b) != int:
@@ -41,6 +47,35 @@ def addition(a, b):
 
 print(addition(4, 6))
 print(addition("Amor", 6))  # None
+
+# -------------------------------------------------------------------------------------------------------------
+# Function documentation (Docstring):
+#   Type of comment to explain the purpose of a function and how it should be used
+#   Syntax:
+#       def functionName(arg1, arg2,...)
+#           ''' single line function purpose explaination.
+#           INPUT:
+#           arg1: type. description
+#           arg2: type. description
+#           ...
+#           OUTPUT:
+#           description
+#           '''
+#           Function body
+# -------------------------------------------------------------------------------------------------------------
+
+print('\n# ********************************************* #')
+print('Function documentation (Docstring):\n')
+
+def hi(s):
+    '''saying hi
+    Input:
+    s: str. the name to be greated
+    Output:
+    message in title form'''
+    return f'Hi {s.strip().title()}'
+
+print(hi('  aMr  '))
 
 # -------------------------------------------------------------------------------------------------------------
 # Function default parameter(s)
@@ -70,12 +105,16 @@ say_hello()
 #       - locally defined varialbes are not callable form outside its scope
 #       - to define a variable within the local (function) scope as a global scope variable
 #           => add the word "global" before the variable name and in another line assign the value
+#       - function can still access the value of the global variable(s) within the function,
+#         however, the value of a global variable can not be modified inside the function
 # -------------------------------------------------------------------------------------------------------------
 
 print('\n# ********************************************* #')
 print('Function Scope:\n')
 
 x = 1 # global scope
+def zero():
+    print(f'print from the fuction "zero" scope: {x}')
 def one():
     x = 2
     print(f'print from the fuction "one" scope: {x}')
@@ -84,8 +123,10 @@ def two():
     x = 4       # overriding the previous global value
     print(f'print from the fuction "two" scope: {x}')
 
+zero()
 print(f'print from the golbal scope: {x}')
 one()
+print(f'print from the golbal scope: {x}')
 two()
 print(f'print from the golbal scope: {x}')
 
@@ -99,10 +140,7 @@ print('Function Recursion:\n')
 
 print('Example1:')
 def factorial(x):
-    if x > 0:
-        return x * factorial(x-1)
-    else:
-        return 1
+    return x * factorial(x-1) if x > 0 else 1
 
 print(factorial(5))
 print(factorial(2))
