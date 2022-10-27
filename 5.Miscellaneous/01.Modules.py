@@ -14,6 +14,8 @@
 #       Hint #1: if the whole module is imported, the function can be called only using the resolution operator (.)
 #                (e.g. random.random(), functools.reduce())
 #       import moduleName as moduleAlias        imports the module as an alias
+#       from modulName import *                 imports the whole module and all its functions are callable 
+#                                               without the need to hint #1 above
 #
 #     2. Function import:
 #       from moduleName import fn1, fn2,...     imports certain function(s) from the module
