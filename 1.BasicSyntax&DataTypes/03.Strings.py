@@ -230,6 +230,11 @@ print(myList)
 #
 # 20. replace(old value, new value, count)
 #   (optional) replaces certain count of incidents
+#
+# 21. ord('c')
+#   returns an ASCII code for a given character 'c'
+# 22. chr(i)
+#   returns a character for a given integer ASCII code 'i'
 # -------------------------------------------------------------------------------------------------------------
 
 print('\n# ********************************************* #')
@@ -372,6 +377,18 @@ a = 'My name is Amr. Amr comes from Egypt. Amr is 34 years old.'
 print(a.replace('Amr', 'Amoor'))
 print(a.replace('Amr', 'Amoor', 1))
 print(a.replace('Amr', 'Amoor', 2))
+print('# --------------------------------------------- #')
+
+print('ord method:')
+a = 'a'
+print(ord(a))      # 97
+a = 'A'
+print(ord(a))      # 65
+print('# --------------------------------------------- #')
+
+print('chr method:')
+print(chr(97))      # 'a'
+print(chr(122))     # 'z'
 print('# --------------------------------------------- #')
 
 # -------------------------------------------------------------------------------------------------------------
