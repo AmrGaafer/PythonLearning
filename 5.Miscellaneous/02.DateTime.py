@@ -4,6 +4,7 @@
 #       Python String-Format-Time (strftime) cheatsheet: https://strftime.org/
 #       Syntax:
 #           datetimeParameter.strftime('strftime code')
+#   strptime(string, format)      String casting to datatime
 # -------------------------------------------------------------------------------------------------------------
 
 import os
@@ -65,3 +66,10 @@ print(f'my birthday: {myBirthday}')
 print('my birthday formatted version: ' + myBirthday.strftime('%a, %d/%b/%Y'))
 myAge = datetime.datetime.now() - myBirthday
 print(f'my age: {myAge}')
+
+print('\n# ********************************************* #')
+print('string casting to datatime:')
+datetime_str = '09/19/18 13:55:26'
+datetime_object = datetime.datetime.strptime(datetime_str, '%m/%d/%y %H:%M:%S')
+print(type(datetime_object))
+print(datetime_object)  # printed in default format
