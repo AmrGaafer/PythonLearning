@@ -15,6 +15,13 @@
 #           - padx, pady: width and height
 #           - command: the funciton to be called on click (name is given without paranthesis)
 #           - fg, bg: text and background color
+#
+# Entry()   creates a GUI entry element
+#           - width: width
+#           - borderwidth: border width
+#           - fg, bg: text and background color
+#   entryElement.get()                  returns the entered text in the entryElement
+#   entryElement.insert(0, 'Txt')       intializes the entryElement with default text 'Txt'
 # -------------------------------------------------------------------------------------------------------------
 
 import os
@@ -37,11 +44,18 @@ myLabel3.grid(row= 2, column=0)
 
 
 def myClick():
-    myLabel = Label(root, text = 'Horraaaa!').grid(row=5, column=0)
+    myLabel = Label(root, text = e.get()).grid(row=5, column=0)
 
 # creating a button widget (step#1)
-myButton = Button(root, text='Click me!', padx= 50, pady= 50, command=myClick, fg= 'blue', bg= 'white')
+myButton = Button(root, text='Click me!', padx= 50, pady= 20, command=myClick, fg= 'blue', bg= 'white')
 # putting the button on the screen (step#2)
 myButton.grid(row= 4, column=4)
 
+# creating an entry widget (step#1)
+e = Entry(root, width= 20, fg= 'purple', bg= 'yellow', borderwidth= 5)
+# putting the entry widget on the screen (step#2)
+e.grid(row= 6, column= 0)
+e.insert(0, 'I expect your name :)')
+
+# calling the GUI in loop
 root.mainloop()
