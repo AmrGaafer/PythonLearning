@@ -73,10 +73,12 @@ print(myAwesomeList)
 # 5.  pop(index)
 #   removes and returns item of that index
 #
-# 6.  sort(reverse = True/False)
+# 6.  sort(reverse = True/False, key = myFunction)
 #   sorts numerrical or string (not both together) values in ascending or descending order
 #       (default) reverse = False -> Ascending order
 #       reverse = True -> Descending order
+#       (Optional) key to give a sorting function (e.g. len to sort according to the length)
+#
 # 7.  reverse()
 #   reverses the list
 #
@@ -170,6 +172,8 @@ print(myNumbers)
 myNames.sort()
 print(myNames)
 myNames.sort(reverse= True)
+print(myNames)
+myNames.sort(key= len)
 print(myNames)
 print('# --------------------------------------------- #')
 
