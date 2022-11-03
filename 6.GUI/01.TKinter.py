@@ -44,7 +44,7 @@ myLabel3.grid(row= 2, column=0)
 
 
 def myClick():
-    myLabel = Label(root, text = e.get()).grid(row=5, column=0)
+    Label(root, text = e.get()).grid(row=5, column=0)
 
 # creating a button widget (step#1)
 myButton = Button(root, text='Click me!', padx= 50, pady= 20, command=myClick, fg= 'blue', bg= 'white')
