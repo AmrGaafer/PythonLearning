@@ -65,7 +65,7 @@ myBirthday = datetime.datetime(1988, 3, 11, 7, 30, 20)
 print(f'my birthday: {myBirthday}')
 print('my birthday formatted version: ' + myBirthday.strftime('%a, %d/%b/%Y'))
 myAge = datetime.datetime.now() - myBirthday
-print(f'my age: {myAge}')
+print(f'my age: {myAge.days} days')      # .days to get an integer with the number of the days
 
 print('\n# ********************************************* #')
 print('string casting to datatime:')
@@ -73,3 +73,9 @@ datetime_str = '09/19/18 13:55:26'
 datetime_object = datetime.datetime.strptime(datetime_str, '%m/%d/%y %H:%M:%S')
 print(type(datetime_object))
 print(datetime_object)  # printed in default format
+
+print('\n# ********************************************* #')
+print('margin datatime:')
+#margin = int(input('What is the age margin to be considered?... ')) #35 years: 12775
+margin = datetime.timedelta(days= myAge.days - 1)
+print('Am I older than the margin? Ans:... ', myAge > margin)
