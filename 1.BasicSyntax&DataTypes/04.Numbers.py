@@ -41,7 +41,7 @@
 # [>=]  greater than or equal
 #
 # Attributes:
-# is_integer(float)      returns True if the float is a whole and has no fraction
+# floatNr.is_integer()      returns True if the float is a whole and has no fraction
 # -------------------------------------------------------------------------------------------------------------
 
 import os
