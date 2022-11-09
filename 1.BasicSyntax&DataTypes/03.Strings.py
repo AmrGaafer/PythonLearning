@@ -221,7 +221,7 @@ print(myList)
 #   by default the seperator is the blank space
 #   by default the max split is infinity
 # 17. 'seperator'.join(Iterable)
-#   joins the elements of a list into one string
+#   joins the elements of a list or a string into one string
 # 18. splitlines()
 #   returns a list of strings, each line is a list element
 #
@@ -359,6 +359,8 @@ print('# --------------------------------------------- #')
 print('join method:')
 a = ['Amr', 'Sara', 'Haitham']
 print('-'.join(a))
+a = 'Amr'
+print('-'.join(a.capitalize()))
 print('# --------------------------------------------- #')
 
 print('splitlines method:')
