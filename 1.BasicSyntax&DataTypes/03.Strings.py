@@ -127,6 +127,7 @@ print(r"\x48\x65\x6C\x6C\x6F\x20\x57\x6F\x72\x6C\x64\x20\x69\x6E\x20\x41\x53\x43
 #   b. default Start is interpreted as 0
 #   c. default End is interpreted as last character
 #   d. default Step is interpreted as 1
+# NOTE: Strings in Python are immutable
 # -------------------------------------------------------------------------------------------------------------
 
 print('\n# ********************************************* #')
@@ -155,6 +156,11 @@ print(myString[::2])
 print(myString[:])      # prints the whole string
 print(myString[::-1])   # prints the whole string (reversed)
 print('# --------------------------------------------- #')
+
+# Mutation
+a = '0123456789'
+# a[0] = 'x'    # error
+print(a)
 
 # Reversing (Advanced)
 a = 'abcd'
