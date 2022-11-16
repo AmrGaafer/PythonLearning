@@ -1,9 +1,11 @@
 # -------------------------------------------------------------------------------------------------------------
-# Lists:
-# 1. list items are enclosed in square brackets
-# 2. list items are ordered with zero-inddex base
-# 3. list items can be different data types
-# 4. list items are mutable (editable) -> edit, delete and add
+# Lists: Mutable ordered sequences of elements
+#   1. list items are enclosed in square brackets []
+#   2. list items are ordered with zero-index base
+#   3. list items can be different data types
+#   4. list items are mutable (editable) -> edit, delete and add
+#
+#   NOTE: Mutability: whether an object can change its values after it has been created
 # -------------------------------------------------------------------------------------------------------------
 
 import os
@@ -46,11 +48,11 @@ print(myAwesomeList[::-1])  # all list reversed
 print('Edit:')
 myAwesomeList = ['one', 'two', 'three', 15, 100.5, False]
 myAwesomeList2 = [1, 2, 3, 4]
-print(myAwesomeList + myAwesomeList2)   # adding
+print(myAwesomeList + myAwesomeList2)   # adding (concating)
+print(myAwesomeList + [])
+myAwesomeList[0:3] = [1, 2 , 3 , 4]     # edit (mutating)
 print(myAwesomeList)
-myAwesomeList[0:3] = [1, 2 , 3 , 4]     # edit
-print(myAwesomeList)
-myAwesomeList[0:4] = []                 # delete
+myAwesomeList[0:4] = []                 # delete (mutating)
 print(myAwesomeList)
 #myAwesomeList[4] = 5                   # element add is not possible this way
 #print(myAwesomeList)

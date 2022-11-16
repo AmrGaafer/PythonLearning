@@ -10,7 +10,8 @@
 # Identity Operators:
 #   is, is not
 # Membership Operators:
-#   in, not in
+#   in      evaluates if object on left side is included in object on right side
+#   not in  evaluates if object on left side is NOT included in object on right side
 #   Syntax: x in y | x not in y
 #           returns True if x is found in y
 # -------------------------------------------------------------------------------------------------------------

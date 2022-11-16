@@ -6,6 +6,9 @@
 # 4. Triple single quotes or Triple double quotes:
 #   a. are used for Multiple-line without '\n'
 #   b. skip single and double quotes within
+# NOTE: Strings in Python are immutable
+#
+# NOTE: Mutability: whether an object can change its values after it has been created
 # -------------------------------------------------------------------------------------------------------------
 
 import os
@@ -127,7 +130,6 @@ print(r"\x48\x65\x6C\x6C\x6F\x20\x57\x6F\x72\x6C\x64\x20\x69\x6E\x20\x41\x53\x43
 #   b. default Start is interpreted as 0
 #   c. default End is interpreted as last character
 #   d. default Step is interpreted as 1
-# NOTE: Strings in Python are immutable
 # -------------------------------------------------------------------------------------------------------------
 
 print('\n# ********************************************* #')

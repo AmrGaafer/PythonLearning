@@ -1,10 +1,12 @@
 # -------------------------------------------------------------------------------------------------------------
 # Sets:
-# 1. sets are enclosed in curly braces
-# 2. sets items are not ordered and not indexed -> no indexing and no slicing
-# 3. sets items can be only mutable data types (numbers, strings or tuples)
+# 1. sets are enclosed in curly braces {}
+# 2. sets items are unordered and not indexed -> no indexing and no slicing
+# 3. sets items can be only hashable data types (numbers, strings or tuples)
 #      lists and dictionaries are unhashable data type
 # 4. sets items are unique
+#
+#   NOTE: Mutability: whether an object can change its values after it has been created
 # -------------------------------------------------------------------------------------------------------------
 
 print('\n# ********************************************* #')

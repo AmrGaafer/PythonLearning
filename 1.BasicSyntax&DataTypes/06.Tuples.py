@@ -1,15 +1,15 @@
 # -------------------------------------------------------------------------------------------------------------
 # Tuples:
-# 1. tuples are enclosed in parantheses, but parantheses can be removed
+# 1. tuples are enclosed in parantheses (), but parantheses can be removed
 # 2. tuples items are ordered with zero-inddex base
 # 3. tuples items can be different data types
 # 4. tuples are immutable (cannot be modified)
 # 5. tuples items are not unique
 # 6. operators used in strings and lists are available in tuples
 # 
-# Notes:
-# tuples with one element: (element,)
-# the operator * repeat is valid for strings, lists and tuples
+#   NOTE: Mutability: whether an object can change its values after it has been created
+#         tuples with one element: (element,)
+#         the operator * repeat is valid for strings, lists and tuples
 # -------------------------------------------------------------------------------------------------------------
 
 import os
