@@ -36,7 +36,8 @@
 #       pip --version                           returns the version of the installed pip
 #       pip install pip --upgrade pip           upgrades pip
 #       pip list                                returns a list of all installed pip
-#       pip install PackageName                 installs the given Package
+#       pip install PackageName                 installs the given Package(s)
+#       pip uninstall PackageName               uninstalls the given Package(s)
 #       pip install PackageName==x.x.x          installs the given Package version x.x.x
 #       pip install PackageName>=x.x.x          installs the given Package version x.x.x or newer
 # -------------------------------------------------------------------------------------------------------------
