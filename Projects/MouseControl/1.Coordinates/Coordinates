@@ -1,7 +1,7 @@
 # Resource:
 #   https://pyautogui.readthedocs.io/en/latest/mouse.html
 # create an installer:
-#   https://datatofish.com/executable-pyinstaller/c
+#   https://datatofish.com/executable-pyinstaller/
 
 import os
 os.system('cls')        # cls command
