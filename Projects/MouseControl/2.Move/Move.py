@@ -1,10 +1,14 @@
 # Resources:
 #   win32gui install [not implemented]:
+#       https://stackoverflow.com/questions/70725054/how-to-get-the-directory-location-of-the-window-in-focus-in-python
 #       https://stackoverflow.com/questions/2790825/how-can-i-maximize-a-specific-window-with-python
+#       https://www.blog.pythonlibrary.org/2014/10/20/pywin32-how-to-bring-a-window-to-front/
+#       https://stackoverflow.com/questions/2090464/python-window-activation
 #   pygetwindow module explaination:
 #       https://pygetwindow.readthedocs.io/en/latest/
 #   mouse module:
 #       https://github.com/boppreh/mouse
+#       https://www.youtube.com/watch?v=W9wIiLDMiWU
 #   keyboard:
 #       https://github.com/boppreh/keyboard
 
@@ -31,12 +35,20 @@ import time
 
 # solution #3:
 import pygetwindow
+import termcolor
+import pyfiglet
 #print(dir(pygetwindow))
-print(pygetwindow.getAllTitles())   # get all the open windows
-scope = pygetwindow.getWindowsWithTitle('ScopeTest')[0]
-print(scope)
-scope.minimize()
-scope.maximize()
+#print(pygetwindow.getAllTitles())   # get all the open windows
+try:
+    scope = pygetwindow.getWindowsWithTitle('Scope')[0]
+    print(scope)
+    scope.minimize()
+    scope.maximize()
+except:
+    print('Press Ctrl-C to quit.')
+    print(termcolor.colored(pyfiglet.figlet_format('ScopeView Projekt ist nicht offen'), color='red'))
+    while True:
+        continue
 
 
 # move mouse and click:
