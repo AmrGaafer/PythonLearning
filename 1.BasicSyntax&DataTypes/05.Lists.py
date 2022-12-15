@@ -1,9 +1,10 @@
 # -------------------------------------------------------------------------------------------------------------
 # Lists: Mutable ordered sequences of elements
-#   1. list items are enclosed in square brackets []
-#   2. list items are ordered with zero-index base
-#   3. list items can be different data types
-#   4. list items are mutable (editable) -> edit, delete and add
+# 1. list items are enclosed in square brackets []
+# 2. list items are ordered with zero-index base
+# 3. List items are not unique
+# 4. list items can be different data types
+# 5. list items are mutable (editable) -> edit, delete and add
 #
 #   NOTE: Mutability: whether an object can change its values after it has been created
 # -------------------------------------------------------------------------------------------------------------
@@ -26,7 +27,7 @@ print('LISTS INDEXING AND SLICING:\n')
 print('len function:')
 print(len(myAwesomeList))
 
-# Indexing
+# Indexing -> elements have their own type
 print('Indexing:')
 print(myAwesomeList[0])
 print(myAwesomeList[1])
@@ -34,7 +35,7 @@ print(myAwesomeList[2])
 print(myAwesomeList[3])
 print(myAwesomeList[4])
 
-# Slicing
+# Slicing -> elements are lists
 print('Slicing:')
 print(myAwesomeList[1:3])   # items 1 & 2
 print(myAwesomeList[2:])    # items 2 till the end
@@ -70,29 +71,31 @@ print(myAwesomeList)
 #   the element type can be: array and each element is added individually
 #                            or 
 #                            string, each letter is considered as a signle element
-# 4.  remove(element content)
-#   removes the given element content from the whole list (int, float, complex or string)
-# 5.  pop(index)
-#   removes and returns item of that index
 #
-# 6.  sort(reverse = True/False, key = myFunction)
-#   sorts numerrical or string (not both together) values in ascending or descending order
+# 4.  remove(element content)
+#   removes the given element content from the list (first matching element NOT all elements with that value)
+# 5.  pop(index)
+#   removes and returns item of that index, if index is not given it pops the last element
+# 6.  clear()
+#   clears the list
+#
+# 7.  sort(reverse = True/False, key = myFunction)
+#   sorts numerical or string values (not both together) in ascending or descending order
 #       (default) reverse = False -> Ascending order
 #       reverse = True -> Descending order
 #       (Optional) key to give a sorting function (e.g. len to sort according to the length)
-#
-# 7.  reverse()
+# 8.  reverse()
 #   reverses the list
 #
-# 8.  clear()
-#   clears the list
 # 9.  copy()
 #   returns a shallow copy of the list
 #
 # 10. count(element)
 #   returns how many occurancies of the element are found in the list
+#
 # 11. index(element)
 #   returns the first index of the element found in the list
+#   NOTE: returns an error if the element is not found
 # -------------------------------------------------------------------------------------------------------------
 
 print('\n# ********************************************* #')
@@ -158,7 +161,20 @@ myNames = ['Amr', 'Wael', 'Ali', 'Awad', 'Gaafer']
 myName = myNames.pop(0)
 print(myName)
 print(myNames)
+myName = myNames.pop()
+print(myName)
+print(myNames)
+print('# --------------------------------------------- #')
 
+print('clear method:')
+myNumbers = [-100, 15.7, 26, 0, -2.31, -1024 , 650000]
+print(myNumbers)
+myNumbers.clear()
+print(myNumbers)
+myNames = ['Amr', 'Wael', 'Ali', 'Awad']
+print(myNames)
+myNames.clear()
+print(myNames)
 print('# --------------------------------------------- #')
 
 print('sort method:')
@@ -184,22 +200,9 @@ myNumbers = [-100, 15.7, 26, 0, -2.31, -1024 , 650000]
 print(myNumbers)
 myNumbers.reverse()
 print(myNumbers)
-
 myNames = ['Amr', 'Wael', 'Ali', 'Awad']
 print(myNames)
 myNames.reverse()
-print(myNames)
-print('# --------------------------------------------- #')
-
-print('clear method:')
-myNumbers = [-100, 15.7, 26, 0, -2.31, -1024 , 650000]
-print(myNumbers)
-myNumbers.clear()
-print(myNumbers)
-
-myNames = ['Amr', 'Wael', 'Ali', 'Awad']
-print(myNames)
-myNames.clear()
 print(myNames)
 print('# --------------------------------------------- #')
 
@@ -208,14 +211,13 @@ a = [0, 1, 2 , 3, 4]
 b = a.copy()
 print(a)
 print(b)
-
 a.append(5)
 print(a)
 print(b)
 print('# --------------------------------------------- #')
 
 print('count method:')
-myNumbers = [-100, 15.7, 26, 0, -2.31, -1024 , 650000]
+myNumbers = [-100, 15.7, 26, 0, -2.31, -1024 , 650000, 0.0]
 print(myNumbers.count(15.7))
 print(myNumbers.count(0.0))
 print(myNumbers.count(0))

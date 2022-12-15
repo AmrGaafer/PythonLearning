@@ -1,14 +1,14 @@
 # -------------------------------------------------------------------------------------------------------------
-# Tuples:
-# 1. tuples are enclosed in parantheses (), but parantheses can be removed
+# Tuples: Immutable ordered sequences of elements
+# 1. tuples items are enclosed in parantheses (), but parantheses can be removed
 # 2. tuples items are ordered with zero-inddex base
-# 3. tuples items can be different data types
-# 4. tuples are immutable (cannot be modified)
-# 5. tuples items are not unique
+# 3. tuples items are not unique
+# 4. tuples items can be different data types
+# 5. tuples are immutable (cannot be modified)
 # 6. operators used in strings and lists are available in tuples
 # 
 #   NOTE: Mutability: whether an object can change its values after it has been created
-#         tuples with one element: (element,)
+#         tuples with one element: (element,) or element,
 #         the operator * repeat is valid for strings, lists and tuples
 # -------------------------------------------------------------------------------------------------------------
 
@@ -70,8 +70,11 @@ print(6 * myTuple)
 # Tuples Methods:
 # 1. count(element)
 #   returns how many occurancies of the element are found in the tuple
+#
 # 2. index(element)
 #   returns the first index of the element found in the tuple
+#   NOTE: returns an error if the element is not found
+#
 # NOTE: tuples could be destructed!
 # -------------------------------------------------------------------------------------------------------------
 
