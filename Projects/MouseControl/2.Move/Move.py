@@ -36,6 +36,7 @@ import time
 
 # solution #3:
 import pygetwindow
+import mouse
 import termcolor
 import pyfiglet
 #print(dir(pygetwindow))
@@ -45,38 +46,40 @@ try:
     #print(scope)
     scope.minimize()
     scope.maximize()
+    
+    # move mouse and click
+    
+    xMin, xMax = 10, 1910
+    yMin, yMax = 10, 1070
+
+    xCollabseAll, yCollabseAll = 165, 145
+    xExpand, yExpand = 20, 210
+    xProject, yProject = 110, 230
+    xStartRecord, yStartRecord = 1305, 65
+
+    # dummy mouse motion 
+    mouse.move(xMin, yMin, absolute= True, duration= 1)
+    mouse.move(xMax, yMin, absolute= True, duration= 1)
+    mouse.move(xMax, yMax, absolute= True, duration= 1)
+    mouse.move(xMin, yMax, absolute= True, duration= 1)
+
+    # scope project recort start
+    mouse.move(xCollabseAll, yCollabseAll, absolute= True, duration= 1)
+    mouse.click()
+    mouse.move(xExpand, yExpand, absolute= True, duration= 1)
+    mouse.click()
+    mouse.move(xProject, yProject, absolute= True, duration= 1)
+    mouse.click()
+    time.sleep(2)
+    mouse.move(xStartRecord, yStartRecord, absolute= True, duration= 1)
+    mouse.click()
+    time.sleep(5)
+    scope.minimize()
+    
 except:
     print('zum Beenden Strg-C drücken.')
     print(termcolor.colored(pyfiglet.figlet_format('ScopeView Projekt ist nicht offen'), color='red'))
-    while True:
-        continue
-
-
-# move mouse and click
-import mouse
-xMin, xMax = 10, 1910
-yMin, yMax = 10, 1070
-
-xCollabseAll, yCollabseAll = 165, 145
-xExpand, yExpand = 20, 210
-xProject, yProject = 110, 230
-xStartRecord, yStartRecord = 1305, 65
-
-# dummy mouse motion 
-mouse.move(xMin, yMin, absolute= True, duration= 1)
-mouse.move(xMax, yMin, absolute= True, duration= 1)
-mouse.move(xMax, yMax, absolute= True, duration= 1)
-mouse.move(xMin, yMax, absolute= True, duration= 1)
-
-# scope project recort start
-mouse.move(xCollabseAll, yCollabseAll, absolute= True, duration= 1)
-mouse.click()
-mouse.move(xExpand, yExpand, absolute= True, duration= 1)
-mouse.click()
-mouse.move(xProject, yProject, absolute= True, duration= 1)
-mouse.click()
-time.sleep(2)
-mouse.move(xStartRecord, yStartRecord, absolute= True, duration= 1)
-mouse.click()
-time.sleep(5)
-scope.minimize()
+    time.sleep(10)
+    #while True:
+    #    time.sleep(2)
+    #    continue
