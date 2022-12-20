@@ -38,7 +38,6 @@ os.system('cls')        # cls command
 
 # solution #3:
 import pygetwindow
-
 #print(dir(pygetwindow))
 #print(pygetwindow.getAllTitles())   # get all the open windows
 try:
@@ -53,12 +52,21 @@ except:
     print('ScopeView Project not found!')
     #os.system(r'C:/Users/Gerd1/Desktop/EOL_Scope/EOL_Scope.sln')                       # hangs execution
     #subprocess.call('C:/Users/Gerd1/Desktop/EOL_Scope/EOL_Scope.sln', shell= False)    # hangs execution
-    subprocess.Popen('C:/Users/Gerd1/Desktop/EOL_Scope/EOL_Scope.sln', stdout = subprocess.PIPE, shell = True)
-    #subprocess.Popen('D:/Arbeitsverzeichnis/Beckhoff/scope/Au41x_EOL_Scope_Project.sln', stdout = subprocess.PIPE, shell = True)
+    #subprocess.Popen('C:/Users/Gerd1/Desktop/EOL_Scope/EOL_Scope.sln', stdout = subprocess.PIPE, shell = True)
+    subprocess.Popen('D:/Arbeitsverzeichnis/Beckhoff/scope/Au41x_EOL_Scope_Project.sln', stdout = subprocess.PIPE, shell = True)
     print('ScopeView Project opening!')
-    time.sleep(30)
-    print('ScopeView Project bringing to front!')
-    scope = pygetwindow.getWindowsWithTitle('EOL_Scope')[0]
+    scope = None
+    startMSG = False
+    while scope is None:
+        time.sleep(0.1)
+        try:
+            scope = pygetwindow.getWindowsWithTitle('EOL_Scope')[0]
+        except:
+            if not startMSG:
+                print("ScopeView is still Starting")
+                startMSG = True
+            continue
+    time.sleep(5)    
     print('ScopeView Project found!')
     print(scope)
     print('ScopeView Project bringing to front!')
@@ -68,48 +76,45 @@ except:
 # move mouse and click
 import mouse
 
-xMin, xMax = 10, 1910
-yMin, yMax = 10, 1070
+# dummy mouse motion
+#xMin, xMax = 10, 1910
+#yMin, yMax = 10, 1070
+#print('Mouse dummy motion between the four screen corners')
+#mouse.move(xMin, yMin, absolute= True, duration= 1)
+#mouse.move(xMax, yMin, absolute= True, duration= 1)
+#mouse.move(xMax, yMax, absolute= True, duration= 1)
+#mouse.move(xMin, yMax, absolute= True, duration= 1)
 
+# scope project recort start
 xCollabseAll, yCollabseAll = 165, 145
 xExpand, yExpand = 20, 210
 xProject, yProject = 110, 230
 xStartRecord, yStartRecord = 1305, 65
-
-# dummy mouse motion
-print('Mouse dummy motion')
-mouse.move(xMin, yMin, absolute= True, duration= 1)
-mouse.move(xMax, yMin, absolute= True, duration= 1)
-mouse.move(xMax, yMax, absolute= True, duration= 1)
-mouse.move(xMin, yMax, absolute= True, duration= 1)
-
-# scope project recort start
 print('ScopeView Project start')
-mouse.move(xCollabseAll, yCollabseAll, absolute= True, duration= 1)
-mouse.click()
-mouse.move(xExpand, yExpand, absolute= True, duration= 1)
-mouse.click()
-mouse.move(xProject, yProject, absolute= True, duration= 1)
-mouse.click()
-time.sleep(1)
+mouse.move(xCollabseAll, yCollabseAll, absolute= True, duration= 0)
+mouse.click()       # collabse all
+mouse.move(xExpand, yExpand, absolute= True, duration= 0)
+mouse.click()       # expand project
+mouse.move(xProject, yProject, absolute= True, duration= 0)
+mouse.click()       # select scope project to activate the record icon
 mouse.move(xStartRecord, yStartRecord, absolute= True, duration= 1)
-mouse.click()
-time.sleep(4)
+mouse.click()       # start record
+time.sleep(1)
 scope.minimize()
+time.sleep(4)       # delay till the scope record is already running
 
 # declare PRG_ScopeView.boScopeReady flag
-#print('Declaring PRG_ScopeView.boScopeReady flag on True')
-#import pyads
-#
-#class AdsCom():
-#    #is_connected = False
-#    def __init__(self):
-#        adsNetID = '192.168.100.10.1.1'
-#        self.plc = pyads.Connection(adsNetID, pyads.PORT_TC3PLC1)
-#        # connect to plc and open connection
-#        #self.plc.close()
-#        self.plc.open()
-#        print(self.plc.is_open)
-#
-#PlcCom = AdsCom()
-#PlcCom.plc.write_by_name("PRG_ScopeView.boScopeReady", True, pyads.PLCTYPE_BOOL)
+print('Declaring PRG_ScopeView.boScopeReady flag on True')
+import pyads
+
+class AdsCom():
+    def __init__(self):
+        adsNetID = '192.168.100.10.1.1'
+        self.plc = pyads.Connection(adsNetID, pyads.PORT_TC3PLC1)
+        # connect to plc and open connection
+        #self.plc.close()
+        self.plc.open()
+        print(self.plc.is_open)
+
+PlcCom = AdsCom()
+PlcCom.plc.write_by_name("PRG_ScopeView.boScopeReady", True, pyads.PLCTYPE_BOOL)
