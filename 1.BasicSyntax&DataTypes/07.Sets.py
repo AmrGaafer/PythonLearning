@@ -28,6 +28,7 @@ print(myAwesomeSet2)
 #   adds an element to the set, this element can be a number ,a string or a tuple (standard set element)
 # 02. update(set argument)
 #   updates the set by adding the given argument (it could be unhaschable data type, e.g list)
+#
 # 03. remove()
 #   removes the given element content from the whole set
 #   if the element doesn't exist, it produces an error
