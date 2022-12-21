@@ -52,8 +52,8 @@ except:
     print('ScopeView Project not found!')
     #os.system(r'C:/Users/Gerd1/Desktop/EOL_Scope/EOL_Scope.sln')                       # hangs execution
     #subprocess.call('C:/Users/Gerd1/Desktop/EOL_Scope/EOL_Scope.sln', shell= False)    # hangs execution
-    #subprocess.Popen('C:/Users/Gerd1/Desktop/EOL_Scope/EOL_Scope.sln', stdout = subprocess.PIPE, shell = True)
-    subprocess.Popen('D:/Arbeitsverzeichnis/Beckhoff/scope/Au41x_EOL_Scope_Project.sln', stdout = subprocess.PIPE, shell = True)
+    subprocess.Popen('C:/Users/Gerd1/Desktop/EOL_Scope/EOL_Scope.sln', stdout = subprocess.PIPE, shell = True)
+    #subprocess.Popen('D:/Arbeitsverzeichnis/Beckhoff/scope/Au41x_EOL_Scope_Project.sln', stdout = subprocess.PIPE, shell = True)
     print('ScopeView Project opening!')
     scope = None
     startMSG = False
@@ -66,7 +66,7 @@ except:
                 print("ScopeView is still Starting")
                 startMSG = True
             continue
-    time.sleep(5)    
+    time.sleep(10)    
     print('ScopeView Project found!')
     print(scope)
     print('ScopeView Project bringing to front!')
@@ -116,5 +116,5 @@ class AdsCom():
         self.plc.open()
         print(self.plc.is_open)
 
-PlcCom = AdsCom()
-PlcCom.plc.write_by_name("PRG_ScopeView.boScopeReady", True, pyads.PLCTYPE_BOOL)
+#PlcCom = AdsCom()
+#PlcCom.plc.write_by_name("PRG_ScopeView.boScopeReady", True, pyads.PLCTYPE_BOOL)
