@@ -7,6 +7,7 @@
 # 5. list items are mutable (editable) -> edit, delete and add
 #
 #   NOTE: Mutability: whether an object can change its values after it has been created
+#         List1 = List2 means that every mutation of one of the is reflected on the other list
 # -------------------------------------------------------------------------------------------------------------
 
 import os
@@ -49,12 +50,18 @@ print(myAwesomeList[::-1])  # all list reversed
 print('Edit:')
 myAwesomeList = ['one', 'two', 'three', 15, 100.5, False]
 myAwesomeList2 = [1, 2, 3, 4]
+myAwesomeList3 = myAwesomeList
 print(myAwesomeList + myAwesomeList2)   # adding (concating)
 print(myAwesomeList + [])
 myAwesomeList[0:3] = [1, 2 , 3 , 4]     # edit (mutating)
 print(myAwesomeList)
+print(myAwesomeList3)
+myAwesomeList3[3] = 5                   # mutation of myAwesomeList3 is reflected on myAwesomeList
+print(myAwesomeList)
+print(myAwesomeList3)
 myAwesomeList[0:4] = []                 # delete (mutating)
 print(myAwesomeList)
+print(myAwesomeList3)
 #myAwesomeList[4] = 5                   # element add is not possible this way
 #print(myAwesomeList)
 
