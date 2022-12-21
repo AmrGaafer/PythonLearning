@@ -75,7 +75,7 @@ print(6 * myTuple)
 #   returns the first index of the element found in the tuple
 #   NOTE: returns an error if the element is not found
 #
-# NOTE: tuples could be destructed!
+# NOTE: tuples could be destructed (tuple unpacking)!
 # -------------------------------------------------------------------------------------------------------------
 
 print('\n# ********************************************* #')
@@ -94,7 +94,7 @@ myNumbers = (-100, 15.7, 26, 0, -2.31, -1024 , 650000)
 print(myNumbers.index(0.0))
 print('# --------------------------------------------- #')
 
-print("Tuple Destruct:")
+print("Tuple Destruct (Unpack):")
 myNames = ('Amr', 'Wael', 'Ali', 'Awad')
 a, b, c, d = myNames
 print(a); print(b); print(c); print(d)

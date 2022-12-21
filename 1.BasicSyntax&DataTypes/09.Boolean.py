@@ -8,7 +8,10 @@
 # Bitwise Operators:
 #   <<(left shift), >>(right shift), &, |, ^(XOR), and ~(-x-1)
 # Identity Operators:
-#   is, is not
+#   is      checks if the two arguments are identical (same object)
+#   is not  checks if the two arguments are NOT identical (same object)
+#   Syntax: x is y | x is not y
+#           returns True if x and y are identical (not only the same value)
 # Membership Operators:
 #   in      evaluates if object on left side is included in object on right side
 #   not in  evaluates if object on left side is NOT included in object on right side

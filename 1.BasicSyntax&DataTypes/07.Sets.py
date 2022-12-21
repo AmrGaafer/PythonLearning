@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------------------
-# Sets: Mutable unordered sequence of elements
+# Sets: Mutable unordered sequence of unique elements
 # 1. sets are enclosed in curly braces {}
 # 2. sets items are unordered and not indexed -> no indexing and no slicing
 # 3. sets items are unique
@@ -24,7 +24,7 @@ print(myAwesomeSet2)
 
 # -------------------------------------------------------------------------------------------------------------
 # Sets Methods:
-# 01. set.add(element)
+# 01. add(element)
 #   adds an element to the set, this element can be a number ,a string or a tuple (standard set element)
 # 02. update(set argument)
 #   updates the set by adding the given argument (it could be unhaschable data type, e.g list)

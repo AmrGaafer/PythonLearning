@@ -1,6 +1,6 @@
 # -------------------------------------------------------------------------------------------------------------
-# Dictionary: Mutable unordered sequences of elements
-# 1. Dictionary items are enclosed in curly brackets {key:value}
+# Dictionary: Mutable unordered sequences mapping of unique keys to values
+# 1. Dictionary items are enclosed in curly brackets {key:value,...}
 # 2. Dictionary items are unordered
 # 3. Dictionary items consist of key:value and seperated by ','
 #       - key has to be hashable (immutable type) numbers, strings or tuples
@@ -23,16 +23,22 @@ user = {
 }
 
 print(user)
-print(len(user))        # number of key:value pairs
+print(len(user))            # number of keys
+
 # get key's value
-print(user['country'])
-print(user.get('country'))
+print(user['country'])      # Crash of programm if  key is not in  dictionray
+#print(user['city'])
+print(user.get('country'))  # NO crash of programm if key is not in dictionary, it returns None (or user defined value)
+print(user.get('city'))
+print(user.get('city', 'ops!'))
+
 # get all keys
 print(user.keys())
+
 # get all values
 print(user.values())
 
-# Two-dimensional (nested) dictionary
+# Two-dimensional (nested) dictionary (Compund data structures)
 languages = {
     'one': {'name': 'python',
             'progress': '70%'},
@@ -41,13 +47,16 @@ languages = {
     'three': {'name': 'C++',
             'progress': '75%'},
 }
-
 print(languages)
-print(len(languages))   # number of key:value pairs
+print(len(languages))        # number of keys
 # get key's value
 print(languages['one'])
 print(languages.get('two'))
 print(languages['one']['name'])
+
+# checking if the key is in the dictionary or not
+print('one' in languages)
+print('five' in languages)
 
 # Dictionary creation
 framework1 = {  'name': 'python',
@@ -61,8 +70,11 @@ print(framework)
 
 # -------------------------------------------------------------------------------------------------------------
 # Dictionary Methods:
+# 0.  get(searched_key, default value if searched_key not found in dictionray)
+#   retuns the value of the searched key, if the key is not found it returns None or a user-defined return
+#
 # 1.  update({key:value})
-#   adds an dictionary element
+#   adds an dictionary element, it is an alternative to dict[new_key] = new_value
 # 2.  setdefault(key,value)
 #   sets the given key with the given value if the key is not found in the dictionary 
 #
