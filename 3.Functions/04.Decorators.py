@@ -4,9 +4,11 @@
 #   - wrap other functions and enhance their behaviour (take a function argument and returns it with added functionality)
 #   Syntax:
 #           def function_DecoratingFunction():...
-#               ...
-#               function_ToBeDocarated()
-#               ...
+#               def function_nested():
+#                   ...
+#                   function_ToBeDocarated()
+#                   ...
+#               return function_nested
 #
 #   Implementation: Sugar Syntax Method:
 #           @Decorator_function
@@ -26,9 +28,9 @@ print('Functions without parameters decoration:')
 def myDecorator(fn):    # decorator accepts fn()
     def nested_fn():    # decorating function (wraper function)
         print('before')
-        fn()
+        fn()            # wrapped function execution
         print('after')
-    return nested_fn     # returns nested_fn
+    return nested_fn    # returns nested_fn
 
 def SayHello():
     print('Hello from function!')
@@ -36,6 +38,7 @@ def SayHello():
 # Intuative decoration method:
 afterDecoration = myDecorator(SayHello)
 afterDecoration()
+print('-----------------------')
 
 # Sugar Syntax method:
 @myDecorator
@@ -57,18 +60,45 @@ def myDecorator(fn):
 
 def myDecorator2(fn):
     def nested_fn(n1, n2):  # has to pass the parameters needed to the wrapped function
-        print('Decorator2')
+        print('before_2')
         fn(n1, n2)          # has to have matching blueprint to to wrapped function
+        print('after_2')
     return nested_fn
 
-@myDecorator
-@myDecorator2
+@myDecorator        # outter decorator
+@myDecorator2       # inner decorator
 def calculate(n1, n2):
     print(n1 + n2)
 
-calculate(1, 2),
+calculate(1, 2)
+print('-----------------------')
+calculate(-1, 2)
+
+print('-----------------------'*2)
+@myDecorator2
+@myDecorator
+def calculate(n1, n2):
+    print(n1 + n2)
+
+calculate(1, 2)
 print('-----------------------')
 calculate(-1, 2)
 
 print('\n# ********************************************* #')
-print('Example (Speed Test):')
+print('Example (Execution time):')
+from time import time
+
+def executionTime(fn):
+    def wrapper(i):
+        start = time()
+        fn(i)
+        end = time()
+        print(f'The function execution time is {end - start} sec')
+    return wrapper
+
+@executionTime
+def rangePrinter(i):
+    for n in range(0, i+1):
+        print(n)
+
+rangePrinter(10000)
