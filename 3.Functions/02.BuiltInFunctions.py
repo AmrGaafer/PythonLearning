@@ -25,9 +25,9 @@
 #                               - the line end is by default "\n" and can be modified
 #
 #  General Purpose Functions:
-#   zip(list1, list2)       returns an iterator that combines multiple iterables into one sequence of tuples
+#   zip(iter1, iter2,..)    returns an iterator that combines multiple iterables into one sequence of tuples
 #                           each tuple contains the elements in that position from all iterables
-#                           - list(zip(list1, list2)) produces list of tuples (iterable)
+#                           - list(zip(iter1, iter2)) produces list of tuples (iterable)
 #                           - the zipped list length is equal to the shortest input list
 #   zip(*lst_of_tpl)        returns tuples from the unzipped list
 #   enumerate(iterable, st) returns an ierator holds an enumarated version of the iterable
