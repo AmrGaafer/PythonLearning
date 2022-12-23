@@ -50,16 +50,18 @@ print(addition("Amor", 6))  # None
 
 # -------------------------------------------------------------------------------------------------------------
 # Function documentation (Docstring):
-#   Type of comment to explain the purpose of a function and how it should be used
+#   Type of comment to explain the purpose of a function, module or class and how it should be used
+#   It can be accessed from the help or Doc attributes (e.g. functionName.__doc__)
+#   It can be a single line or multiple lines string
 #   Syntax:
 #       def functionName(arg1, arg2,...)
 #           ''' single line function purpose explaination.
 #           INPUT:
-#           arg1: type. description
-#           arg2: type. description
-#           ...
+#               arg1: type. description
+#               arg2: type. description
+#               ...
 #           OUTPUT:
-#           description
+#               description
 #           '''
 #           Function body
 # -------------------------------------------------------------------------------------------------------------
@@ -76,6 +78,7 @@ def hi(s):
     return f'Hi {s.strip().title()}'
 
 print(hi('  aMr  '))
+help(hi)    # equivalent to hi.__doc__
 
 # -------------------------------------------------------------------------------------------------------------
 # Function default parameter(s)
