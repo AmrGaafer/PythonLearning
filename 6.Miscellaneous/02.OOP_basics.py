@@ -5,7 +5,7 @@
 #   Paradigm:   structuring a programm so the Methods (Functions) and Attributes (Data or Property)
 #               are bundled into Objects
 #   Methods:    act as Fuction that use the information of the Object
-#   Attributes: act as Object properties
+#   Attributes: act as Object properties/variables
 #   Class:      template for creating Objects (Object constructor or Blueprint)
 #   - OOP allows to organize code and make it readable und reusable
 #
@@ -162,3 +162,28 @@ print(len(profile))     # reflects __len__ return
 profile.skills.append('MySQL')
 print(profile)          # reflects __str__ return
 print(len(profile))     # reflects __len__ return
+
+# --------------------------------------------------------------------------------------------------
+# Methods types:
+#   getter:     proper way to get the values of the attributes
+#   setter:     proper way to set the values of the attributes
+# --------------------------------------------------------------------------------------------------
+
+print('\n# ********************************************* #')
+print('Getters and Setters:\n')
+
+class Member:
+    def __init__(self, name):
+        self.__name = name      # private attribute
+    def say_hello(self):
+        return f'Hello {self.__name}'
+    def get_name(self):         # getter member function
+        return self.__name
+    def set_name(self, new_name):
+        self.__name = new_name
+
+
+my_member = Member('Amr')
+print(my_member.get_name())
+my_member.set_name('Gaafer')
+print(my_member.get_name())
