@@ -1,6 +1,6 @@
 # --------------------------------------------------------------------------------------------------
 # Inheritance:
-#   the concept of inheritance of a base/parent class to a derived class
+#   concept of inheritance of a base/parent class to a derived class
 #
 #   - by defult inherits the derived class all the base class attributes and methods
 #     (including the __init__() constructor)

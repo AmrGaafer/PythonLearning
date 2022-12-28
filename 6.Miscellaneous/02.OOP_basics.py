@@ -1,6 +1,6 @@
 # --------------------------------------------------------------------------------------------------
 # Object Oriented Programming (OOP):
-#   Definition: paradigm or coding style
+#   paradigm or coding style
 #
 #   Paradigm:   structuring a programm so the Methods (Functions) and Attributes (Data or Property)
 #               are bundled into Objects
@@ -17,7 +17,7 @@
 # Everything in Python is an object
 # --------------------------------------------------------------------------------------------------
 # Class Syntax and info:
-#   Definition: Blueprint or constructor of the object, defined with the keyword class
+#   Blueprint or constructor of the object, defined with the keyword class
 #
 #   Class name should be written in PascalCase (UpperCamelCase) style
 #   Class instantiate means instance creation of a class
