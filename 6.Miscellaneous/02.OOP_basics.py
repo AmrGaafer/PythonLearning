@@ -1,6 +1,7 @@
 # --------------------------------------------------------------------------------------------------
 # Object Oriented Programming (OOP):
 #   Definition: paradigm or coding style
+#
 #   Paradigm:   structuring a programm so the Methods (Functions) and Attributes (Data or Property)
 #               are bundled into Objects
 #   Methods:    act as Fuction that use the information of the Object
@@ -17,6 +18,7 @@
 # --------------------------------------------------------------------------------------------------
 # Class Syntax and info:
 #   Definition: Blueprint or constructor of the object, defined with the keyword class
+#
 #   Class name should be written in PascalCase (UpperCamelCase) style
 #   Class instantiate means instance creation of a class
 #   Instance:   it has the class' attributes and methods
