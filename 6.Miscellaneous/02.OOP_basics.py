@@ -187,3 +187,25 @@ my_member = Member('Amr')
 print(my_member.get_name())
 my_member.set_name('Gaafer')
 print(my_member.get_name())
+
+# --------------------------------------------------------------------------------------------------
+# @property Decorator: transforms a method into a property
+# --------------------------------------------------------------------------------------------------
+
+print('\n# ********************************************* #')
+print('@property Decorator:\n')
+
+class Member:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def say_hello(self):
+        return f'Hello {self.name}'
+    @property
+    def age_in_days(self):
+        return self.age * 365
+
+one = Member('Amr', 35)
+print(one.say_hello())
+#print(one.age_in_days())
+print(one.age_in_days)
