@@ -87,47 +87,28 @@ print('\n# ********************************************* #')
 print('RE Methods:\n')
 print('search method:')
 
-my_string = re.search(r'[A-Z]', 'Amr Gaafer')
-print(type(my_string))
-print(my_string.string)     # returns the original string
-print(my_string.span())     # returns span of the matching string
-print(my_string.group())    # returns the matching string
-print(my_string.groups())   # returns the matching string
+# example to replace
+def purify(s: str) -> str:
+    print(s)
+    if 'i ' in s or 'I ' in s:
+        s = re.sub(r'\wi\s|\wI\s','_ ', s)
+    print(s)
+    if ' i' in s or ' I' in s:
+        s = re.sub(r'\si\w|\sI\w',' _', s)
+    print(s)
+    if 'i' in s or 'I' in s:
+        s = re.sub(r'\wi\w|\wI\w','_', s)
+    s = re.sub(r'_', '', s).strip()
+    return s
 
-is_email = re.search(r'[A-z0-9\.]+@[A-z]+\.(com|net|org|de)', 'a@a.com')
-if is_email:
-    print('this is a valid e-mail')
-    print(is_email.span())
-    print(is_email.string)
-    print(is_email.group())
-else:
-    print('this is not a valid e-mail')
-print('# --------------------------------------------- #')
+#print(purify("STRING"))
+#print(purify("1i2 33 i4i5 i555ii5"))
+#print(purify("It is a bit chilly"))
+#print(purify("Pineapple pizza is delicious"))
+#print(purify("It is not there"))
 
-print('findall method:')
-email_input = input('please enter your e-mail: ')
-search = re.findall(r'[A-z0-9\.]+@[A-z]+\.com|net|org|de', email_input)
-email_list = []
-if search:
-    email_list.append(search)
-    print('e-mail added')
-else:
-    print('invalid e-mail')
-for email in email_list:
-    print(email)
-print('# --------------------------------------------- #')
+import re
+def disemvowel(string_):
+    return re.sub(r'[aeiouAEIOU]', '', string_)
 
-print('split method:')
-string_one = 'I Love Python'
-search1 = re.split(r'\s', string_one, 1)
-print(search1)
-
-string_two = 'How-to_Write_a_very-good-article'
-search2 = re.split(r'-|_', string_two)
-print(search2)
-print('# --------------------------------------------- #')
-
-print('sub method:')
-string_three = 'I love Python'
-search3 = re.sub(' ', '-', string_three, 5)
-print(search3)
+print(disemvowel('This website is for losers LOL!'))
