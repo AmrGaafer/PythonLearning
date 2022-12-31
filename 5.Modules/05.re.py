@@ -87,6 +87,10 @@ print('\n# ********************************************* #')
 print('RE Methods:\n')
 print('search method:')
 
+# example to search if certain string exists in a string:
+print(bool(re.search(r"Amr", 'Amr Gaafer')))
+print(bool(re.search(r"Amr", 'Lina Gaafer')))
+
 # example to replace
 def purify(s: str) -> str:
     print(s)
@@ -107,7 +111,6 @@ def purify(s: str) -> str:
 #print(purify("Pineapple pizza is delicious"))
 #print(purify("It is not there"))
 
-import re
 def disemvowel(string_):
     return re.sub(r'[aeiouAEIOU]', '', string_)
 
