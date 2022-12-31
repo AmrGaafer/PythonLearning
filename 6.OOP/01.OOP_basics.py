@@ -2,7 +2,7 @@
 # Object Oriented Programming (OOP):
 #   paradigm or coding style
 #
-#   Paradigm:   structuring a programm so the Methods (Functions) and Attributes (Data or Property)
+#   Paradigm:   structuring a program so the Methods (Functions) and Attributes (Data or Property)
 #               are bundled into Objects
 #   Methods:    act as Fuction that use the information of the Object
 #   Attributes: act as Object properties/variables
@@ -17,10 +17,10 @@
 # Everything in Python is an object
 # --------------------------------------------------------------------------------------------------
 # Class Syntax and info:
-#   Blueprint or constructor of the object, defined with the keyword class
+#   Blueprint or constructor of the object, defined with the keyword 'class'
 #
-#   Class name should be written in PascalCase (UpperCamelCase) style
-#   Class instantiate means instance creation of a class
+#   class name should be written in PascalCase (UpperCamelCase) style
+#   class instantiate means instance (object) creation of a class
 #   Instance:   it has the class' attributes and methods
 #   By creating a class object, Python looks for the built-in method __init__
 #       __init__ method is called everytime an instance is created (class constructor)
@@ -28,32 +28,37 @@
 #   within the class 'self' refers to the current instance of the class
 #   'self' can be named anything
 #
+# Instance Types:
 #   Instance Attributes:
-#       defined within the constructor
+#       defined within the constructor __init__()
 #   Class Attributes:
-#       defined outside the constructor
+#       defined outside the constructor __init__()
 #
+# Methods Types
 #   Instance Methods:
-#       take 'self' parameter which points to the instance created
+#       takes 'self' parameter which points to the instance created
 #       can have more than one input parameter (like any function)
 #       can freely access the class' attributes, other methods and class itself
 #   Class Methods:
 #       marked with @classmethod decorator to flag it as a class method
-#       it takes 'cls' paramter not 'self' to point to the class not the instance
+#       takes 'cls' paramter not 'self' to point to the class not the instance
 #       does not need class instantiation
 #       used to do something in the class itself not the instances
 #   Static Methods:
 #       marked with @staticmethod decorator to flag it as a static method
-#       it takes no parameters
-#       it bounds to the class not the instance
+#       does not need class instantiation
+#       takes no parameters
+#       bounds to the class not the instance
 #       used when doing something without class or object access, but related to the class
-#   Magic Methods:
-#       self.__class__ returns the class name of the instance
-#       __str__ gives a human-readable output of the object
-#               if it is not edited within the class,
-#               the default return is the class name and the instance memory address
-#       __len__ returns the length of the container
-#               called when the built-in function len() is called on the object
+#   Magic Methods (Dunder):
+#       marked with two underscores before and after the method name
+#       self.__class__  returns the class name of the instance
+#       __str__         [default return] object's class name and the instance memory address
+#                       - it can be redefined to override the dafault definition
+#                       to give a human-readable output of the object
+#       __len__         [default return] returns the length of the container
+#                       called when the built-in function len() is called on the object
+#                       - it can be redefined to override the dafault definition
 #
 #   Syntax:
 #       class ClassName:
@@ -70,8 +75,6 @@
 #           @classmethod
 #           def my_class_method(cls):
 #               ...
-#
-#   NOTE: Methods with two underscore in the start and the end are called Dunder or Magic Method
 # --------------------------------------------------------------------------------------------------
 
 import os
@@ -129,6 +132,7 @@ print(member1.__class__)
 print(member1.first_name)
 print(member2.first_name)
 print(member3.first_name)
+print(member4.first_name)
 
 print(member1.get_full_name())          # = print(Member.get_full_name(member1))
 print(member1.get_name_with_title())
@@ -145,6 +149,7 @@ print(member4.get_all_info())
 
 Member.show_users_count()
 print('Number of users= ', Member.users_count)
+print('# --------------------------------------------- #')
 
 class Skill():
     def __init__(self):
@@ -174,7 +179,7 @@ print('Getters and Setters:\n')
 
 class Member:
     def __init__(self, name):
-        self.__name = name      # private attribute
+        self.__name = name      # private attribute (not to be directly accessed)
     def say_hello(self):
         return f'Hello {self.__name}'
     def get_name(self):         # getter member function

@@ -2,8 +2,10 @@
 # Plymorphism:
 #   concept of many forms of the same method. The method has many definitions
 #   HINT: to force the developer to implement a pre-defined method from the base class
+#
 #   in the derived class, raise an exception in the base class definition
 #       raise NotImplementedError('Derived class must implement this method')
+#   in this case, the method is like an abstract method
 # --------------------------------------------------------------------------------------------------
 
 import os

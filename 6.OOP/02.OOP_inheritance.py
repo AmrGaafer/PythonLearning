@@ -2,7 +2,7 @@
 # Inheritance:
 #   concept of inheritance of a base/parent class to a derived class
 #
-#   - by defult inherits the derived class all the base class attributes and methods
+#   - by defult the derived class inherits all the base class attributes and methods
 #     (including the __init__() constructor)
 #   - Method Override: if a method from the base class is re-defined in the derived class,
 #     the derived calss' definition overrides the base class' definition
@@ -61,7 +61,7 @@ class Food:                 # base class
 
 class Apple(Food):          # derived class
     def __init__(self, name, price, amount):
-        #Food.__init__(self, name)   # create an instance from base class
+        #Food.__init__(self, name, price)   # create an instance from base class
         super().__init__(name, price)
         self.amount = amount
         print(f'{self.name} is created from derived class, its price is {self.price} and there is {self.amount}')
@@ -88,15 +88,15 @@ class BaseOne:
 
 class BaseTwo:
     def __init__(self):
-        print('base one')
+        print('base two')
     def func_two(self):
-        print('one')
+        print('two')
 
 class Derived(BaseOne, BaseTwo):
     pass
 
-my_var = Derived()
 print(Derived.mro())
+my_var = Derived()
 
 print(my_var.func_one)
 print(my_var.func_two)
@@ -113,3 +113,48 @@ class DerivedOne(Base):
 
 class DerivedTwo(DerivedOne):
     pass
+
+# --------------------------------------------------------------------------------------------------
+# Abstract Base Class (ABC):
+#   class is called an ABC class if it has one or more abstract methods
+#       - abstract methods are to be led by @abstractmethod Decorator
+#       - abstract methods should not be implemented in abstract class (use keyword pass)
+#       - abstract methods should be implemented in implementing class(es),
+#         otherwise an error is triggerd
+#       - other methods in abstract class must not be implemented in implementing class(es)
+#
+#   Implementation:
+#   abc module provides infrastructure for defining custom ABC
+#   ABCMeta class (from abc module) is a meta-cass used for defining ABC
+#
+#   Syntax:
+#       class AbstractClass(metaclass = ABCMeta):
+#           @abstractmethod                     #Decorator on the methods
+#           def abstract_method(self,...):
+#               pass
+# --------------------------------------------------------------------------------------------------
+
+print('\n# ********************************************* #')
+print('Abstract Base Class (ABC):\n')
+
+from abc import ABCMeta, abstractmethod 
+
+class Programming(metaclass = ABCMeta):
+    @abstractmethod
+    def has_oop(self):
+        pass
+    def has_name(self):
+        pass
+
+class Python(Programming):
+    def has_oop(self):
+        return 'yes'
+
+class Pascal(Programming):
+    def has_oop(self):
+        return 'no'
+
+one = Python()
+print(one.has_oop())
+two = Pascal()
+print(two.has_oop())
