@@ -4,9 +4,9 @@
 #   - wrap other functions and enhance their behaviour (take a function argument and returns it with added functionality)
 #   Syntax:
 #           def function_DecoratingFunction():...
-#               def function_nested():
+#               def function_nested(...):          # has to have the same blueprint of nested function
 #                   ...
-#                   function_ToBeDocarated()
+#                   function_ToBeDocarated(...)
 #                   ...
 #               return function_nested
 #
