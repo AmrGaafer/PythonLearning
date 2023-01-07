@@ -1,3 +1,4 @@
+# Basic class of a user-defined vector data type
 class Vector(object):
     def __init__(self, coordinates):
         try:
@@ -17,7 +18,7 @@ class Vector(object):
         return 'Vector: {}'.format(self.coordinates)
 
 
-    def __len__(self):
+    def __len__(self):          # polymorphism of len function
         return len(self.coordinates)
 
 
