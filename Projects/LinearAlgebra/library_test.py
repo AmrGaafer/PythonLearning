@@ -1,20 +1,19 @@
 # --------------------------------------------------------------------------------------------------
 # Linear Algebra Library Testing
 # Developer:    Amr Gaafer
-# Date:         TBD
+# Date:         08.01.2023
 # --------------------------------------------------------------------------------------------------
 
 import os
 import sys
-sys.path.append('C:/Users/Gerd1/Desktop/GitHub/PythonLearning/Projects/LinearAlgebra/LinearAlgebraLibrary')
-
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/LinearAlgebraLibrary')
 from linear_algebra import Vector
 import linear_algebra
 
 os.system('cls')        # cls command
 
-
-my_vector = Vector([8.218, -9.341])
+# vectors equality test:
+my_vector =  Vector([8.218, -9.341])
 my_vector2 = Vector([-1.129, 2.111])
 
 print(my_vector.__str__())
@@ -64,3 +63,59 @@ print('angle in rad: ', linear_algebra.vector_angle_rad(my_vector, my_vector2))
 my_vector =  Vector([7.35, 0.221, 5.188])
 my_vector2 = Vector([2.751, 8.259, 3.985])
 print('angle in degree: ', linear_algebra.vector_angle_degree(my_vector, my_vector2))
+
+# vector_is_parallel() & vector_is_orthogonal() test:
+my_vector =  Vector([-7.579, -7.88])
+my_vector2 = Vector([22.737, 23.64])
+print('vectors parallel: ', linear_algebra.vector_is_parallel(my_vector, my_vector2))
+print('vectors parallel: ', linear_algebra.vector_is_orthogonal(my_vector, my_vector2))
+my_vector =  Vector([-2.029, 9.97, 4.172])
+my_vector2 = Vector([-9.231, -6.639, -7.245])
+print('vectors parallel: ', linear_algebra.vector_is_parallel(my_vector, my_vector2))
+print('vectors parallel: ', linear_algebra.vector_is_orthogonal(my_vector, my_vector2))
+my_vector =  Vector([-2.328, -7.284, -1.214])
+my_vector2 = Vector([-1.821, 1.072, -2.94])
+print('vectors parallel: ', linear_algebra.vector_is_parallel(my_vector, my_vector2))
+print('vectors parallel: ', linear_algebra.vector_is_orthogonal(my_vector, my_vector2))
+my_vector =  Vector([2.118, 4.827])
+my_vector2 = Vector([0, 0])
+print('vectors parallel: ', linear_algebra.vector_is_parallel(my_vector, my_vector2))
+print('vectors parallel: ', linear_algebra.vector_is_orthogonal(my_vector, my_vector2))
+
+# vector_projection() & vector_orthogonal() test:
+my_vector =  Vector([3.039, 1.879])
+my_vector2 = Vector([0.825, 2.036])
+print('vectors projection: ', linear_algebra.vector_projection(my_vector, my_vector2))
+print('vectors orthogonal: ', linear_algebra.vector_orthogonal(my_vector, my_vector2))
+my_vector =  Vector([-9.88, -3.264, -8.159])
+my_vector2 = Vector([-2.155, -9.353, -9.473])
+print('vectors projection: ', linear_algebra.vector_projection(my_vector, my_vector2))
+print('vectors orthogonal: ', linear_algebra.vector_orthogonal(my_vector, my_vector2))
+my_vector =  Vector([3.009, -6.172, 3.692, -2.51])
+my_vector2 = Vector([6.404, -9.144, 2.759, 8.718])
+print('vectors projection: ', linear_algebra.vector_projection(my_vector, my_vector2))
+print('vectors orthogonal: ', linear_algebra.vector_orthogonal(my_vector, my_vector2))
+
+# vector_cross_product() test:
+my_vector =  Vector([5, 3, -2])
+my_vector2 = Vector([-1, 0, 3])
+print('vectors cross product: ', linear_algebra.vector_cross_product(my_vector, my_vector2))
+my_vector =  Vector([8.462, 7.893, -8.187])
+my_vector2 = Vector([6.984, -5.975, 4.778])
+print('vectors cross product: ', linear_algebra.vector_cross_product(my_vector, my_vector2))
+
+# vector_parallelogram_area() test:
+my_vector =  Vector([5, 3, -2])
+my_vector2 = Vector([-1, 0, 3])
+print('parallelogram area: ', linear_algebra.vector_parallelogram_area(my_vector, my_vector2))
+my_vector =  Vector([-8.987, -9.838, 5.031])
+my_vector2 = Vector([-4.268, -1.861, -8.866])
+print('parallelogram area: ', linear_algebra.vector_parallelogram_area(my_vector, my_vector2))
+
+# vector_triangle_area() test:
+my_vector =  Vector([5, 3, -2])
+my_vector2 = Vector([-1, 0, 3])
+print('triangle area: ', linear_algebra.vector_triangle_area(my_vector, my_vector2))
+my_vector =  Vector([1.5, 9.547, 3.691])
+my_vector2 = Vector([-6.007, 0.124, 5.772])
+print('triangle area: ', linear_algebra.vector_triangle_area(my_vector, my_vector2))
