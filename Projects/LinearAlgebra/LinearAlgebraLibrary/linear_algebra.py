@@ -79,7 +79,7 @@ def vector_direction(A):
     if vector_magnitude(A) != 0:
         return vector_scale(A, 1/vector_magnitude(A))
     else:
-        raise ValueError('the input vector must not be a zero vector!')
+        return A
 
 @vectors_check
 def vector_dot_product(A, B):
