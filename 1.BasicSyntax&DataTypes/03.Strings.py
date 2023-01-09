@@ -228,6 +228,7 @@ print(myList)
 #   rsplit starts counting to max split from the right
 #   by default the seperator is the blank space
 #   by default the max split is infinity
+#   NOTE: [*my_string] splits the string to single characters array
 # 17. 'seperator'.join(Iterable)
 #   joins the elements of a list or a string into one string
 # 18. splitlines()
