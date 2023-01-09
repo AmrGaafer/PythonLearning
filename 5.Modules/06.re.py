@@ -118,7 +118,6 @@ def disemvowel(string_):
 print(disemvowel('This website is for losers LOL!'))
 
 # example to count unique consonants
-
 def count_consonants(text):
     return len(set(re.findall(r'[b-df-hj-np-tv-z]', text.lower())))
 
