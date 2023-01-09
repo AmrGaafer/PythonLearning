@@ -18,34 +18,40 @@
 import os
 import numpy as np      # numpy module
 from time import time
-import sys
+from sys import getsizeof
 os.system('cls')        # cls command
 
 print('numby:\n')
 print('numpy version: ', np.__version__)
 #print(dir(np))
 
+# Creating array
 my_list = [1, 2, 3, 4]          # create a list
 my_array = np.array(my_list)    # create an array
-
 print(my_list)
 print(my_array)
 print(type(my_list))
 print(type(my_array))
 
-# Accessing Elements
-print('accessing elements:')
-print(my_list[0])
-print(my_list[1])
-print(my_array[0])
-print(my_array[1])
-
-# Elements Id
+# Elements Id -> array elements are contigous
 print('elemtents id:')
 print(id(my_list[0]))
 print(id(my_list[1]))
 print(id(my_array[0]))
 print(id(my_array[1]))
+
+# Accessing Elements
+print('accessing elements (indexing):')
+print(my_list[0])
+print(my_list[1])
+print(my_array[0])
+print(my_array[1])
+
+print('accessing elements (slicing):')
+my_array = np.array(['A', 'B', 'C', 'D', 'E', 'F'])
+print(my_array.ndim)
+print(my_array[1:4])
+print(my_array[:4])
 
 # Types Unify
 print('\ntypes unify:')
@@ -69,20 +75,6 @@ b = np.array([10, 20])
 c = np.array([[1, 2], [3, 4]])
 d = np.array([[[1,11], [2, 12]], [[3, 13], [4, 14]]])
 
-# Accessing Elements
-print(a)
-print(b[0])
-print(c[0][0])
-print(d[0][0][0])
-print(d[1, 1, 1])
-
-# Dimensions
-print('dimensions:')
-print(a.ndim)
-print(b.ndim)
-print(c.ndim)
-print(d.ndim)
-
 # Creating custom-dimensional array:
 print('\ncustom-dimensional arrays:')
 my_custom_array = np.array([1, 2, 3], ndmin= 3)
@@ -91,6 +83,32 @@ print(my_custom_array)
 print(my_custom_array[0])
 print(my_custom_array[0][0])
 print(my_custom_array[0][0][0])
+
+# Dimensions
+print('dimensions:')
+print(a.ndim)
+print(b.ndim)
+print(c.ndim)
+print(d.ndim)
+print(my_custom_array.ndim)
+
+# Accessing Elements
+print('accessing elements (indexing):')
+print(a)
+print(b[0])
+print(c[0][0])
+print(d[0][0][0])
+print(d[1, 1, 1])   # equivalent indexing syntax
+
+print('accessing elements (slicing):')
+my_list = np.array([['A', 'B', 'X'],
+                    ['C', 'D', 'Y'],
+                    ['E', 'F', 'Z'],
+                    ['M', 'N', 'O']])
+print(my_list[0:3, 0:2])
+print(my_list[1:3, 1:])
+print(my_list[2:, :2])
+print(my_list[0::2, :2])
 
 # Performance check
 print('\nperformance check (time and space):')
@@ -103,13 +121,13 @@ my_array2 = np.arange(elements)
 list_start = time()
 list_result = [n1 + n2 for n1, n2 in zip(my_list1, my_list2)]
 print(f'list time: {time() - list_start} ')
-print(f'item size: {sys.getsizeof(list_result[0])}')                          # item size in Byte
-print(f'list size: {len(list_result)}')                                       # no of elements
-print(f'total list size: {sys.getsizeof(list_result[0]) * len(list_result)} Byte')
+print(f'item size: {getsizeof(list_result[0])}')    # item size in Byte
+print(f'list size: {len(list_result)}')                 # no of elements
+print(f'total list size: {getsizeof(list_result[0]) * len(list_result)} Byte')
 
 array_start = time()
 array_result = my_array1 + my_array2
 print(f'array time: {time() - array_start} ')
-print(f'item size: {array_result.itemsize}')                                # item size in Byte
-print(f'array size: {array_result.size}')                                   # no of elements
+print(f'item size: {array_result.itemsize}')            # item size in Byte
+print(f'array size: {array_result.size}')               # no of elements
 print(f'total array size: {array_result.itemsize * array_result.size} Byte')
