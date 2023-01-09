@@ -26,7 +26,7 @@ print(user)
 print(len(user))            # number of keys
 
 # get key's value
-print(user['country'])      # Crash of programm if  key is not in  dictionray
+print(user['country'])      # Crash of programm if key is not in dictionray
 #print(user['city'])
 print(user.get('country'))  # NO crash of programm if key is not in dictionary, it returns None (or user defined value)
 print(user.get('city'))
