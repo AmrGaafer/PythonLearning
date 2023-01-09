@@ -111,7 +111,15 @@ def purify(s: str) -> str:
 #print(purify("Pineapple pizza is delicious"))
 #print(purify("It is not there"))
 
+# example to remove vowels
 def disemvowel(string_):
     return re.sub(r'[aeiouAEIOU]', '', string_)
 
 print(disemvowel('This website is for losers LOL!'))
+
+# example to count unique consonants
+
+def count_consonants(text):
+    return len(set(re.findall(r'[b-df-hj-np-tv-z]', text.lower())))
+
+print(count_consonants('abcdef'))
