@@ -1,7 +1,7 @@
 # --------------------------------------------------------------------------------------------------
 # pylint Module: code evaluation module to check if the code is satisfying the coding guidlines
 #   Testing on terminal:
-#       pylint.exe file_directory to be evaluated
+#       pylint.exe "file_directory to be evaluated"
 # --------------------------------------------------------------------------------------------------
 '''This is my test module'''
 
