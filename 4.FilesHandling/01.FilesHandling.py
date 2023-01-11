@@ -1,7 +1,8 @@
-# -------------------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------
 # Files Handling:
-#   open("file name with its directory", "mode")
-#       returns a <class '_io.TextIOWrapper'> object (e.g. myFile)
+#   File Opening:
+#       open("file name with its directory", "mode")
+#           returns a <class '_io.TextIOWrapper'> object (e.g. myFile)
 #       the different modes of this command:
 #           "r" Read        [Default value] open a file to read and give an error if the file does not exist
 #           "w" Write       open a file to write, create a file if it does not exist
@@ -11,7 +12,7 @@
 #   Reading Methods:
 #       myFile.read(n)      Read the whole file or till the maximum number of characters (n) is reached
 #       myFile.readline(n)  Read the whole line or till the maximum number of characters (n) is reached
-#       myFile.readlines(n) Read the whole file as a listas long as the n character reaches this list item
+#       myFile.readlines(n) Read the whole file as a list as long as the n character reaches this list item
 #
 #   Writing/Appending Methods:
 #       myFile.write(s)     Write the given string (s) in the file
@@ -19,25 +20,39 @@
 #   Writing vs. Append:
 #       Write rewrites the whole file with every execution. Append starts from the end of the text file.
 #
-#   Important Methods:
-#       myFile.truncate(n)  Remove the whole text except the first n given characters [only in Append Mode]
-#       myFile.tell()       Return the position of the cursor [valid for all open modes]
-#       myFile.seek(n)      Move the curser with the given offset value [valid for all open modes]
+#   File Closing:
+#       myFile.close()
 #
-#   myFile.close("file name with its directory")
-# -------------------------------------------------------------------------------------------------------------
+#   File Opening and Closing using special syntax:
+#       with open("file name with its directory", "mode") as f:
+#           block of code (e.g. f.read())
+#       -This with keyword allows to open a file, do operations on it,
+#        and automatically close it after the indented code is executed.
+#        f.close() is not needed anymore!
+#        the file object f can only be accessed within this indented block.
+#
+#   Important Methods on opened files:
+#       myFile.truncate(n)  Remove the whole text except the first n given characters [only in Append Mode]
+#       myFile.tell()       Return the position of the cursor
+#       myFile.seek(n)      Move the curser with the given offset value
+#       - Opening a file is like openning a window to look into the file.
+#         To be more precise, it'S a window that'S only one character wide 
+#         and it always starts off at the very start of the file.
+#         -> the same file can be opened many times
+# --------------------------------------------------------------------------------------------------
 
 import os   # import operating system module
 os.system('cls')        # cls command
 
 # get the current working directory
-print("\nCurrent working directory:\n" + os.getcwd() + "\n")
+print("\nCurrent working directory:\n" + os.getcwd())
 
 # get the absolute path of the currently opened Python file
-print("\nOpened python file path:\n" + os.path.abspath(__file__) + "\n")
+print("\nOpened python file path:\n" + os.path.abspath(__file__))
+print(__file__)
 
 # get the absolute directory of the currently opened Python file
-print("\nOpened python file directory:\n" + os.path.dirname(os.path.abspath(__file__) ) + "\n")
+print("\nOpened python file directory:\n" + os.path.dirname(os.path.abspath(__file__) ))
 
 # change the current working directory
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -45,8 +60,8 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 print('\n# ********************************************* #')
 print('File Opening:\n')
 # absolute path
-# myFile = open("D:/Career Development/Nanodegree_Python/__Elzero Web School__/MyCode/4.FilesHandling/amr.txt")
-# relative path
+# myFile = open("D:/..../MyCode/4.FilesHandling/myFileRead.txt.txt")
+# relative path -> it can be used after change of the current working directory
 myFile = open("myFileRead.txt")
 
 # tests and checks:
@@ -56,14 +71,26 @@ print(myFile.name)
 print(myFile.mode)
 print(myFile.encoding)
 
+# crash test to open the same file many times
+# <module> OSError: [Errno 24] Too many open files: 'myFileRead.txt'
+# files = []
+# for i in range(10000):
+#     files.append(open('myFileRead.txt', 'r'))
+#     print(i)
+
 print('\n# ********************************************* #')
 print('File Reading:\n')
-# print(myFile.read(7))         # Read the whole file or till the maximum number of characters is reached
 print(myFile.read())
-
-# print(myFile.readline())      # Read the whole line or till the maximum number of characters is reached
-# print(myFile.readlines(15))     # Read the whole file as a list or till the maximum number of characters is reached
+# print(myFile.read(7))
+# print(myFile.readline(8))
+# print(myFile.readlines())
 myFile.close()
+
+with open("myFileRead.txt") as f:
+    print('\n\'with\' syntax:')
+    for line in f:
+        print(line, end='')
+    print('')
 
 print('\n# ********************************************* #')
 print('File Writing/Appending:\n')
