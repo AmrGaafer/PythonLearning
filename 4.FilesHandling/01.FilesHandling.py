@@ -88,7 +88,7 @@ myFile.close()
 
 with open("myFileRead.txt") as f:
     print('\n\'with\' syntax:')
-    for line in f:
+    for line in f:          # iterates over the lines
         print(line, end='')
     print('')
 
