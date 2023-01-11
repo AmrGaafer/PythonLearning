@@ -6,6 +6,15 @@
 #   4. Why the file was created
 #   5. Comment is written before or beside the programming line
 #   Important: The shortcut to comment a line is Ctrl+?
+#
+# Experimenting with an Interpreter:
+#   ->Start your Python interactive interpreter by entering the command python in your terminal. 
+#     You can type here to interact with Python directly. 
+#     This is an awesome place to experiment and try bits of Python code at a time. 
+#     Just enter Python code, and the output will appear on the next line.
+#   ->To quit the Python interactive interpreter, 
+#     use the command exit() or hit ctrl-D on mac or linux,
+#     and ctrl-Z then Enter for windows.
 # --------------------------------------------------------------------------------------------------
 
 """
