@@ -1,5 +1,6 @@
 # --------------------------------------------------------------------------------------------------
-# string Module: holds pre-saved strings
+# string Module: contains useful collections of letters like string.digits
+#                (a string containing all characters which are valid digits).
 # --------------------------------------------------------------------------------------------------
 
 import os
