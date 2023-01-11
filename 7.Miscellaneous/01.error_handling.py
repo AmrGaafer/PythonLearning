@@ -1,9 +1,13 @@
 # --------------------------------------------------------------------------------------------------
-# Exceptions:
+# Errors in Python are two kinds -syntax errors and exceptions.
+# Syntax Errors: Python can't interpret code, since code has a syntax mistake,
+#                can be detected before program running. in run-time it produces SyntaxError
+# Exceptions: occur when unexpected things happen during program execution
 #   1. Exceptions are runtime error reporting mechanism
 #   2. Exceptions give messages to understand the problem
 #   3. Exceptions messages give traceback highlighting the line causing the error
-#   4. Exceptions have many types (e.g. SyntaxError, IndexError, KeyError,... etc.)
+#   4. Exceptions have many types
+#      (e.g. ValueError, AssertionError, IndexError, KeyError, TypeError, keyboardInterrupt, ZeroDivisionError...)
 #   Resource: https://docs.python.org/3/tutorial/errors.html
 #             https://docs.python.org/3/library/exceptions.html
 #
@@ -15,12 +19,15 @@
 #   Syntax: 
 #       try:
 #           Test the code for errors
-#       except ErrorType:
+#       except ErrorType as e:
 #           handle the errors (if error exists)
+#           if exception is not specified (no ErrorType given), it will be a generic exception
+#           [Optional] an exception alias can be added to access the error message
+#           'except Exception'  is just the base class for all built-in exceptions
 #       [Optional] else:
 #           execute if no error exists
 #       [Optional] finally:
-#           run the code anyway
+#           run the code anyway; before function return and loop break
 # --------------------------------------------------------------------------------------------------
 
 import os
@@ -31,7 +38,7 @@ print('Exception Raise:\n')
 
 x = 10      # -10 causes Exception raising
 if x < 0:
-    raise Exception( 'Number is less than zero')
+    raise Exception('Number is less than zero')
 
 y = 10      # 'Amr' causes TypeError Exception raising
 if not isinstance(y, int):
@@ -60,10 +67,10 @@ except NameError:
     print('identifier not found')
 except:
     print('error catched')
+print('\n# --------------------------------------------- #')
 
 my_file = None
 tries = 5
-
 while tries > 0:
     try:
         print('enter the file name with absolute path')
@@ -84,3 +91,22 @@ while tries > 0:
             print('file closed')
 else:
     print('number of tries has been reached!...Sorry')
+print('\n# --------------------------------------------- #')
+
+while True:
+    try:
+        my_input = int(input('enter an integer: '))
+        break
+    #except Exception as e:
+    #    print('Exception')
+    except ValueError as e:             # Exception Specifying: ValueError
+        print('invalid entry')
+        print(f'ValueError: {e}')
+    except KeyboardInterrupt as e:      # Exception Specifying: KeyboardInterrupt
+        print('User interrupted the loop')
+        print(f'KeyboardInterrupt: {e}')
+        break
+    else:
+        print('good entry')             # no way to get to this statement because of break
+    finally:
+        print('Attempted input')        # runs even before loop break
