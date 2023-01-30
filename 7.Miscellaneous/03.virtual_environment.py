@@ -17,8 +17,10 @@
 #   NOTE: [in terminal] which python: shows which python is running currently
 #
 #   Run file with python from virtual environment:
-#       Syntax: [in terminal] ai\Scripts\python
+#       Syntax: [in terminal] ai\Scripts\python.exe [file to be run]
+#
+#   Save the virtual environment for future use:
+#       Syntax: [in terminal] pip freeze > requirements.txt
+#   installeing a pre-saved requirements.txt:
+#       Syntax: [in terminal] pip install -r requirements.txt
 # --------------------------------------------------------------------------------------------------
-
-import os
-os.system('cls')        # cls command
