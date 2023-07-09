@@ -1,2 +1,2 @@
 # PythonLearning
-Python Practice Excercises
+Python Practice Exercises
