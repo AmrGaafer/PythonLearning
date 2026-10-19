@@ -10,16 +10,16 @@
 #         Built-in Modules list: https://docs.python.org/3/py-modindex.html
 #
 #   Important built-in packages:
-#       csv:            very convenient for reading and writing csv files
-#       collections:    useful extensions of the usual data types including OrderedDict, defaultdict and namedtuple
-#       random:         generates pseudo-random numbers, shuffles sequences randomly and chooses random items
-#       string:         more functions on strings.
-#       re:             pattern-matching in strings via regular expressions
-#       math:           some standard mathematical functions
 #       os:             interacting with operating systems
 #       os.path:        submodule of os for manipulating path names
 #       sys:            work directly with the Python interpreter
-#       json:           good for reading and writing json files (good for web work)
+#       csv:            very convenient for reading and writing csv files
+#       json:           good for reading and writing json files
+#       collections:    useful extensions of the usual data types including OrderedDict, defaultdict and namedtuple
+#       random:         generates pseudo-random numbers, shuffles sequences randomly and chooses random items
+#       string:         more functions on strings
+#       re:             pattern-matching in strings via regular expressions
+#       math:           some standard mathematical functions
 #
 #   Syntax:
 #     1. Module import:
@@ -73,6 +73,7 @@
 #       pytz:           World Timezone Definitions for Python
 #
 #   Syntax (on Terminal):
+#       apt install python3-pip                 [optional] installs pip if needed
 #       pip --version                           returns the version of the installed pip
 #       pip install pip --upgrade pip           upgrades pip
 #       pip list                                returns a list of all installed pip
@@ -81,6 +82,7 @@
 #       pip install PackageName==x.x.x          installs the given Package version x.x.x
 #       pip install PackageName>=x.x.x          installs the given Package version x.x.x or newer
 #       pip install -r requirements.txt         installs the project dependencies all at once
+#       pip show PackageName                    shows information about package installed
 # -------------------------------------------------------------------------------------------------------------
 
 import os

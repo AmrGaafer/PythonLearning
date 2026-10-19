@@ -10,6 +10,7 @@
 #       attributes and methods can be accessed from within the class or object only
 #       attributes and methods can not be modified from outside the class
 #       Syntax: protected attributes and methods start with prefis two underscores '__'
+#       - to access a private member '__dummy', it could be called by the syntax '_ClassName__dummy'
 #
 # NOTE: the restrictions proposed at the protected and private access are conventional,
 #       this means the developer can ovveride these limitations in the code!!
@@ -28,9 +29,9 @@ class Member:
     def __init__(self, name):
         self.name = name
 
-one = Member('Amr')
+one = Member('Amr')     # instantization
 print(one.name)
-one.name = 'Wael'
+one.name = 'Wael'       # modify
 print(one.name)
 
 # protected
@@ -38,22 +39,20 @@ class Member:
     def __init__(self, name):
         self._name = name
 
-one = Member('Amr')
+one = Member('Amr')     # instantization
 print(one._name)
-one._name = 'Wael'
+one._name = 'Wael'      # modify
 print(one._name)
 
 # private
 class Member:
     def __init__(self, name):
-        self._name = name
+        self.__name = name
 
 one = Member('Amr')
-print(one._name)
-one._name = 'Wael'
-print(one._name)
+#print(one.__name)       # no access on private member
+print(one._Member__name)    # how to access private member
 
-# protected
 class Member:
     def __init__(self, name):
         self.__name = name
@@ -64,5 +63,4 @@ one = Member('Amr')
 #print(one.__name)
 #one.__name = 'Wael'
 #print(one.__name)
-print(one._Member__name)    # how to access private member
 print(one.say_hello())

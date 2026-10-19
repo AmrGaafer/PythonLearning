@@ -13,8 +13,8 @@
 #
 # Python supports nested-if-statement
 #
-# Ternary conditional operator (short if):
-# statement if True | if (condition) | else statement if False
+# Ternary conditional operator (Shorthandf if):
+# "statement if True" if (condition) else "statement if False"
 # -------------------------------------------------------------------------------------------------------------
 
 import os
