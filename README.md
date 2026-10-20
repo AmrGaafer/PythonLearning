@@ -1,2 +1,2 @@
 # PythonLearning
-Python Practice Exercises
+A user guide to learn Python with learning by doing!
