@@ -8,8 +8,8 @@
 # 4. PascalCase
 # -----------------------------------------------------------------------------
 
-import os
-os.system('cls')        # cls command
+import subprocess
+subprocess.call('cls', shell=True)        # clear command for Windows systems
 
 # String (str):
 print(type("Hi!"))
